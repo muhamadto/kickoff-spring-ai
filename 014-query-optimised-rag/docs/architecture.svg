@@ -1,0 +1,209 @@
+<!--
+  - Licensed to Muhammad Hamadto 2026
+  -
+  - Licensed under the Apache License, Version 2.0 (the "License");
+  - you may not use this file except in compliance with the License.
+  - You may obtain a copy of the License at
+  -   https://www.apache.org/licenses/LICENSE-2.0
+  -
+  - See the NOTICE file distributed with this work for additional information regarding copyright ownership.
+  -
+  - Unless required by applicable law or agreed to in writing, software
+  - distributed under the License is distributed on an "AS IS" BASIS,
+  - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  - See the License for the specific language governing permissions and
+  - limitations under the License.
+  -->
+
+<svg style="background-color: #ffffff; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" height="100%"
+  viewBox="0 0 1200 870" width="100%"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Arrowhead Markers -->
+    <filter height="110%" id="shadow" width="110%" x="-5%" y="-5%">
+      <feDropShadow dx="0" dy="2" flood-color="#000000" flood-opacity="0.06" stdDeviation="4"/>
+    </filter>
+    <marker id="arrow-purple" markerHeight="6" markerWidth="6" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrow-red" markerHeight="6" markerWidth="6" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-emerald" markerHeight="6" markerWidth="6" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#059669"/>
+    </marker>
+    <marker id="arrow-amber" markerHeight="6" markerWidth="6" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#b45309"/>
+    </marker>
+    <marker id="arrow-teal" markerHeight="6" markerWidth="6" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0d9488"/>
+    </marker>
+    <marker id="arrow-indigo" markerHeight="6" markerWidth="6" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4f46e5"/>
+    </marker>
+
+    <!-- Drop Shadow Filter -->
+    <marker id="arrow-blue" markerHeight="6" markerWidth="6" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect fill="#f8fafc" height="635" rx="12" stroke="#cbd5e1" stroke-dasharray="5 5" stroke-width="1.5" width="160" x="25" y="68"/>
+  <rect fill="#ffffff" filter="url(#shadow)" height="105" rx="8" stroke="#94a3b8" stroke-width="1" width="144" x="33" y="130"/>
+  <rect fill="#f0f9ff" height="635" rx="12" stroke="#0284c7" stroke-width="2" width="600" x="198" y="68"/>
+  <rect fill="#ffffff" filter="url(#shadow)" height="42" rx="6" stroke="#0284c7" stroke-width="1.5" width="572" x="212" y="110"/>
+  <rect fill="#fffbe6" height="72" rx="8" stroke="#f59e0b" stroke-width="1.5" width="572" x="212" y="165"/>
+  <rect fill="#fef2f2" height="438" rx="8" stroke="#fca5a5" stroke-width="1.5" width="145" x="212" y="252"/>
+  <rect fill="#ffffff" height="42" rx="5" stroke="#f87171" stroke-width="1" width="129" x="220" y="300"/>
+  <rect fill="#ffffff" height="42" rx="5" stroke="#f87171" stroke-width="1" width="129" x="220" y="350"/>
+  <rect fill="#ffffff" height="42" rx="5" stroke="#f87171" stroke-width="1" width="129" x="220" y="400"/>
+  <rect fill="#f0fdf4" height="438" rx="8" stroke="#86efac" stroke-width="1.5" width="165" x="367" y="252"/>
+  <rect fill="#ffffff" height="52" rx="5" stroke="#4ade80" stroke-width="1" width="149" x="375" y="300"/>
+  <rect fill="#ffffff" height="48" rx="5" stroke="#4ade80" stroke-width="1" width="149" x="375" y="360"/>
+  <rect fill="#dcfce7" height="52" rx="5" stroke="#22c55e" stroke-width="1.5" width="149" x="375" y="416"/>
+  <rect fill="#ffffff" height="48" rx="5" stroke="#4ade80" stroke-width="1" width="149" x="375" y="476"/>
+  <rect fill="#bbf7d0" height="50" rx="5" stroke="#16a34a" stroke-width="1.5" width="149" x="375" y="532"/>
+  <rect fill="#faf5ff" height="438" rx="8" stroke="#a855f7" stroke-width="2" width="242" x="542" y="252"/>
+  <rect fill="#ffffff" filter="url(#shadow)" height="55" rx="6" stroke="#c084fc" stroke-width="1.5" width="226" x="550" y="298"/>
+  <rect fill="#f3e8ff" height="55" rx="6" stroke="#a855f7" stroke-width="1.5" width="226" x="550" y="360"/>
+  <rect fill="#e9d5ff" height="42" rx="5" stroke="#9333ea" stroke-width="1.5" width="226" x="550" y="422"/>
+  <rect fill="#ffffff" height="212" rx="6" stroke="#7c3aed" stroke-width="1.5" width="226" x="550" y="471"/>
+  <rect fill="#fcfaf2" height="28" rx="4" stroke="#d8b4fe" stroke-width="1" width="214" x="556" y="495"/>
+  <rect fill="#fcfaf2" height="28" rx="4" stroke="#d8b4fe" stroke-width="1" width="214" x="556" y="528"/>
+  <rect fill="#f3e8ff" height="52" rx="4" stroke="#a855f7" stroke-width="1.5" width="214" x="556" y="561"/>
+  <rect fill="#fcfaf2" height="28" rx="4" stroke="#d8b4fe" stroke-width="1" width="214" x="556" y="618"/>
+  <rect fill="#ddd6fe" height="26" rx="4" stroke="#7c3aed" stroke-width="1" width="214" x="556" y="651"/>
+  <rect fill="#faf5ff" height="295" rx="12" stroke="#a855f7" stroke-width="2" width="363" x="812" y="68"/>
+  <rect fill="#ffffff" filter="url(#shadow)" height="65" rx="8" stroke="#c084fc" stroke-width="1.5" width="337" x="825" y="108"/>
+  <rect fill="#f3e8ff" filter="url(#shadow)" height="70" rx="8" stroke="#a855f7" stroke-width="2" width="337" x="825" y="181"/>
+  <rect fill="#ffffff" filter="url(#shadow)" height="92" rx="8" stroke="#7c3aed" stroke-width="2" width="337" x="825" y="259"/>
+  <rect fill="#fdf4ff" height="328" rx="12" stroke="#d946ef" stroke-width="2" width="363" x="812" y="375"/>
+  <rect fill="#ffffff" height="78" rx="6" stroke="#0d9488" stroke-width="2" width="337" x="825" y="412"/>
+  <rect fill="#ffffff" height="58" rx="6" stroke="#f0abfc" stroke-width="1" width="337" x="825" y="498"/>
+  <rect fill="#fae8ff" height="125" rx="6" stroke="#e879f9" stroke-width="1.5" width="337" x="825" y="564"/>
+  <rect fill="#f3e8ff" height="135" rx="10" stroke="#a855f7" stroke-width="2" width="1150" x="25" y="715"/>
+  <rect fill="#ffffff" height="88" rx="6" stroke="#c084fc" stroke-width="1" width="545" x="40" y="750"/>
+  <rect fill="#ffffff" height="88" rx="6" stroke="#c084fc" stroke-width="1" width="550" x="610" y="750"/>
+
+  <line marker-end="url(#arrow-blue)" stroke="#2563eb" stroke-width="2" x1="177" x2="212" y1="131" y2="131"/>
+  <line marker-end="url(#arrow-amber)" stroke="#b45309" stroke-width="2" x1="498" x2="498" y1="152" y2="165"/>
+  <path d="M 784,188 L 805,188 L 805,140 L 825,140" fill="none" marker-end="url(#arrow-amber)" stroke="#b45309" stroke-dasharray="4 4" stroke-width="1.5"/>
+  <path d="M 284,237 L 284,252" fill="none" marker-end="url(#arrow-red)" stroke="#dc2626" stroke-width="2"/>
+  <path d="M 449,237 L 449,252" fill="none" marker-end="url(#arrow-emerald)" stroke="#059669" stroke-width="2"/>
+  <path d="M 663,237 L 663,252" fill="none" marker-end="url(#arrow-purple)" stroke="#7c3aed" stroke-width="2"/>
+  <path d="M 776,325 L 800,325 L 800,216 L 825,216" fill="none" marker-end="url(#arrow-indigo)" stroke="#4f46e5" stroke-dasharray="4 4" stroke-width="1.5"/>
+  <path d="M 776,387 L 805,387 L 805,430 L 825,430" fill="none" marker-end="url(#arrow-teal)" stroke="#0d9488" stroke-width="2"/>
+  <path d="M 770,587 L 800,587 L 800,450 L 825,450" fill="none" marker-end="url(#arrow-teal)" stroke="#0d9488" stroke-width="2"/>
+  <path d="M 770,660 L 800,660 L 800,305 L 825,305" fill="none" marker-end="url(#arrow-purple)" stroke="#7c3aed" stroke-dasharray="4 4"
+    stroke-width="1.5"/>
+  <path d="M 177,145 L 212,145" fill="none" marker-end="url(#arrow-blue)" stroke="#2563eb" stroke-width="2"/>
+  <path d="M 190,145 L 190,185 L 177,185" fill="none" marker-end="url(#arrow-blue)" stroke="#2563eb" stroke-width="2"/>
+
+  
+
+  <text fill="#0f172a" font-size="20" font-weight="700" text-anchor="middle" x="600" y="28">Query-Optimised RAG Architecture (Spring AI)</text>
+  <text fill="#475569" font-size="13" text-anchor="middle" x="600" y="48">Step-Back Prompting &amp; Dual-Context Retrieval (System + User Prompt
+    Augmentation)
+  </text>
+  <text fill="#334155" font-size="14" font-weight="700" text-anchor="middle" x="105" y="92">Chat Client / HTTP</text>
+  <text fill="#64748b" font-size="11" text-anchor="middle" x="105" y="109">REST Controller</text>
+  <text fill="#1e293b" font-size="13" font-weight="700" text-anchor="middle" x="105" y="155">Client / User</text>
+  <text fill="#2563eb" font-size="11" font-style="italic" text-anchor="middle" x="105" y="177">GET /chat</text>
+  <text fill="#1e293b" font-size="9.5" font-weight="600" text-anchor="middle" x="105" y="197">?question="..."</text>
+  <text fill="#1e293b" font-size="9.5" font-weight="600" text-anchor="middle" x="105" y="215">&amp;conversationId="session_123"</text>
+  <text fill="#0369a1" font-size="15" font-weight="700" text-anchor="middle" x="498" y="92">Spring AI Application (ChatService)</text>
+  <text fill="#0c4a6e" font-size="12" font-weight="700" text-anchor="middle" x="498" y="128">ChatService.chat(question, conversationId)</text>
+  <text fill="#0369a1" font-size="9.5" text-anchor="middle" x="498" y="143">Pattern Match Switch over MessageClassification Outcome</text>
+  <text fill="#92400e" font-size="11.5" font-weight="700" x="224" y="184">Classification Gate: MessageClassificationService</text>
+  <text fill="#d97706" font-size="9" font-weight="700" text-anchor="end" x="772" y="184">classificationChatClient (Flash-Lite)</text>
+  <text fill="#78350f" font-size="9.5" x="224" y="201">• Evaluates intent: BOOKING_REQUEST, IN_SCOPE, OUT_OF_SCOPE, NOT_RELATED, PROBABLE_SECURITY
+  </text>
+  <text fill="#b45309" font-size="9.5" font-weight="600" x="224" y="216">• Single lightweight LLM call fast-deflects unwanted queries before RAG
+    execution
+  </text>
+  <text fill="#991b1b" font-size="11" font-weight="700" text-anchor="middle" x="284" y="272">Fast Deflection</text>
+  <text fill="#7f1d1d" font-size="8.5" text-anchor="middle" x="284" y="286">(No RAG Execution)</text>
+  <text fill="#dc2626" font-size="9" font-weight="700" x="226" y="315">PROBABLE_SECURITY</text>
+  <text fill="#991b1b" font-size="8" x="226" y="330">Prompt Injection Blocked</text>
+  <text fill="#dc2626" font-size="9" font-weight="700" x="226" y="365">OUT_OF_SCOPE</text>
+  <text fill="#991b1b" font-size="8" x="226" y="380">Out of Scope Topics</text>
+  <text fill="#dc2626" font-size="9" font-weight="700" x="226" y="415">NOT_RELATED</text>
+  <text fill="#991b1b" font-size="8" x="226" y="430">Out of Domain / Unparsed</text>
+  <text fill="#991b1b" font-size="8.5" font-weight="700" text-anchor="middle" x="284" y="465">Returns Fixed Strings</text>
+  <text fill="#166534" font-size="11" font-weight="700" text-anchor="middle" x="449" y="272">BOOKING_REQUEST</text>
+  <text fill="#15803d" font-size="8.5" text-anchor="middle" x="449" y="286">BookingService Pipeline</text>
+  <text fill="#14532d" font-size="9" font-weight="700" x="381" y="315">Structured Extraction</text>
+  <text fill="#166534" font-size="8" x="381" y="329">• .entity(BookingRequest.class)</text>
+  <text fill="#166534" font-size="8" x="381" y="341">• Details, date, quantity</text>
+  <text fill="#14532d" font-size="9" font-weight="700" x="381" y="375">Required Fields Check</text>
+  <text fill="#166534" font-size="8" x="381" y="389">• Validates missing properties</text>
+  <text fill="#166534" font-size="8" x="381" y="401">• Prompts user if incomplete</text>
+  <text fill="#14532d" font-size="9" font-weight="700" x="381" y="431">Registry Validity Check</text>
+  <text fill="#15803d" font-size="8" x="381" y="445">• RegistryService</text>
+  <text fill="#15803d" font-size="8" x="381" y="457">• Validates request existence</text>
+  <text fill="#14532d" font-size="9" font-weight="700" x="381" y="491">Duplicate Check</text>
+  <text fill="#166534" font-size="8" x="381" y="505">• Checks conversation history</text>
+  <text fill="#14532d" font-size="9.5" font-weight="800" x="381" y="549">Issue Booking Ref</text>
+  <text fill="#166534" font-size="8" stroke-width="0" x="381" y="563">• Generates REF-XXXX ref</text>
+  <text fill="#581c87" font-size="11.5" font-weight="800" text-anchor="middle" x="663" y="272">IN_SCOPE: Step-Back RAG</text>
+  <text fill="#7e22ce" font-size="8.5" font-weight="700" text-anchor="middle" x="663" y="286">Query Optimization Flow</text>
+  <text fill="#6b21a8" font-size="9.5" font-weight="700" x="558" y="315">StepBackQueryService</text>
+  <text fill="#581c87" font-size="8" x="558" y="329">• Generates broader, high-level query</text>
+  <text fill="#7e22ce" font-size="8" font-weight="600" x="558" y="342">• Calls stepBackChatClient (Flash Model)</text>
+  <text fill="#581c87" font-size="9.5" font-weight="700" x="558" y="377">StepBackSearchService</text>
+  <text fill="#6b21a8" font-size="8" x="558" y="391">• Dense vector search on broader query</text>
+  <text fill="#7e22ce" font-size="8" font-weight="700" x="558" y="404">• Configured by step-back.top-k</text>
+  <text fill="#3b0764" font-size="9" font-weight="800" x="558" y="438">System Prompt Augmentation</text>
+  <text fill="#581c87" font-size="8" x="558" y="452">• Injects step-back context into .system(...)</text>
+  <text fill="#4c1d95" font-size="9.5" font-weight="800" x="558" y="488">mainChatClient Advisor Stack</text>
+  <text fill="#7c3aed" font-size="8" font-weight="800" text-anchor="end" x="768" y="488">Pro Model</text>
+  <text fill="#581c87" font-size="8.5" font-weight="700" x="562" y="513">PiiRedactionAdvisor (Order 10)</text>
+  <text fill="#581c87" font-size="8.5" font-weight="700" x="562" y="546">MessageChatMemoryAdvisor (Order 20)</text>
+  <text fill="#581c87" font-size="8.5" font-weight="800" x="562" y="576">QuestionAnswerAdvisor (Order 25)</text>
+  <text fill="#6b21a8" font-size="7.5" x="562" y="589">• Vector search using exact raw user prompt</text>
+  <text fill="#7e22ce" font-size="7.5" font-weight="700" x="562" y="601">• Injects exact context into .user(...)</text>
+  <text fill="#581c87" font-size="8.5" font-weight="700" x="562" y="636">SimpleLoggerAdvisor (Order 30)</text>
+  <text fill="#3b0764" font-size="8.5" font-weight="800" text-anchor="middle" x="663" y="668">Pro LLM Generation (Dual Context)</text>
+  <text fill="#6b21a8" font-size="15" font-weight="700" text-anchor="middle" x="993" y="92">LLM Models</text>
+  <text fill="#6b21a8" font-size="10.5" font-weight="700" x="835" y="126">classificationChatClient (Bare Bean)</text>
+  <text fill="#a855f7" font-size="8" font-weight="700" text-anchor="end" x="1152" y="126">Flash-Lite</text>
+  <text fill="#581c87" font-size="8.5" x="835" y="142">• Isolated fast scope &amp; intent classification</text>
+  <text fill="#581c87" font-size="8.5" x="835" y="156">• Zero advisors attached</text>
+  <text fill="#4c1d95" font-size="10.5" font-weight="800" x="835" y="199">stepBackChatClient (Bare Bean)</text>
+  <text fill="#7c3aed" font-size="8" font-weight="800" text-anchor="end" x="1152" y="199">Flash Model</text>
+  <text fill="#581c87" font-size="8.5" x="835" y="215">• Abstract question generation</text>
+  <text fill="#581c87" font-size="8.5" x="835" y="229">• Bare client (no advisors attached)</text>
+  <text fill="#3b0764" font-size="10.5" font-weight="800" x="835" y="278">mainChatClient LLM Model</text>
+  <text fill="#7c3aed" font-size="8" font-weight="800" text-anchor="end" x="1152" y="278">Pro Model</text>
+  <text fill="#581c87" font-size="8.5" x="835" y="295">• Answers with step-back-augmented context</text>
+  <text fill="#581c87" font-size="8.5" x="835" y="309">• Receives Step-Back Context via System Prompt</text>
+  <text fill="#581c87" font-size="8.5" x="835" y="323">• Receives Exact Context via User Prompt (Q&amp;A Advisor)</text>
+  <text fill="#701a75" font-size="14" font-weight="700" text-anchor="middle" x="993" y="398">Database Layer</text>
+  <text fill="#0f766e" font-size="10.5" font-weight="800" x="835" y="430">Vector Store (Embedding Knowledge Base)</text>
+  <text fill="#0d9488" font-size="8.5" x="835" y="446">• Pass 1: Queried by StepBackSearchService (top-k)</text>
+  <text fill="#0d9488" font-size="8.5" x="835" y="460">• Pass 2: Queried by QuestionAnswerAdvisor (exact user prompt)</text>
+  <text fill="#047857" font-size="8" font-weight="700" x="835" y="474">• Both retrieval passes run independently</text>
+  <text fill="#86198f" font-size="10.5" font-weight="700" x="835" y="516">JDBC Chat Memory Table</text>
+  <text fill="#701a75" font-size="8.5" x="835" y="531">• Multi-turn history keyed by conversationId</text>
+  <text fill="#701a75" font-size="8.5" x="835" y="545">• Updated for IN_SCOPE chats</text>
+  <text fill="#701a75" font-size="10.5" font-weight="800" x="835" y="582">ChatHistoryRepository (Audit Log)</text>
+  <text fill="#a21caf" font-size="8.5" font-weight="700" x="835" y="598">• Audit records created for all classification branches</text>
+  <text fill="#701a75" font-size="8" x="835" y="613">• Captures Fast Deflection (Security, Scope, Not Related)</text>
+  <text fill="#701a75" font-size="8" x="835" y="626">• Captures Booking confirmations and validations</text>
+  <text fill="#701a75" font-size="8" x="835" y="639">• Captures Step-Back-augmented RAG answers</text>
+  <text fill="#4c1d95" font-size="13" font-weight="800" text-anchor="middle" x="600" y="738">KEY INNOVATION: Step-Back Prompting &amp; Isolated Dual
+    Retrieval
+  </text>
+  <text fill="#6b21a8" font-size="10" font-weight="700" x="50" y="768">1. Abstraction &amp; System Prompt Isolation</text>
+  <text fill="#581c87" font-size="9" x="50" y="784">• Generates a broader question ("Group stage results?") via stepBackChatClient.</text>
+  <text fill="#581c87" font-size="9" x="50" y="798">• StepBackSearchService queries VectorStore independently (top-k).</text>
+  <text fill="#7e22ce" font-size="9" font-weight="700" x="50" y="812">• Injected ONLY into .system(...), keeping QuestionAnswerAdvisor completely
+    unaware!
+  </text>
+  <text fill="#6b21a8" font-size="10" font-weight="700" x="620" y="768">2. Unmodified Exact Match Retrieval &amp; Pro Generation</text>
+  <text fill="#581c87" font-size="9" x="620" y="784">• QuestionAnswerAdvisor (Order 25) retrieves against exact user words in .user(...).</text>
+  <text fill="#581c87" font-size="9" x="620" y="798">• Main LLM upgraded to Pro model to handle dual-context synthesis seamlessly.</text>
+  <text fill="#7e22ce" font-size="9" font-weight="700" x="620" y="812">• Combines high-level background facts + specific target details for accurate
+    answers.
+  </text>
+</svg>

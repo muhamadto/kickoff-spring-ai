@@ -1,0 +1,11 @@
+### Demonstrates a fixed prompt on the flash model
+GET http://localhost:8080/tournament
+
+### Demonstrates a prompt template with a date parameter
+GET http://localhost:8080/matches?date=15-07-2026
+
+### Demonstrates a prompt template with a parameter, on the same route
+GET http://localhost:8080/matches?stage=quarter-finals
+
+### Demonstrates per-prompt options: temperature 0.6 overrides the yaml default of 0.0
+GET http://localhost:8080/story?team=morocco

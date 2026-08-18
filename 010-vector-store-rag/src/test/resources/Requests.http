@@ -1,0 +1,68 @@
+### Teams and groups, grounded by the "Teams and Groups" knowledge base section
+GET http://localhost:8080/chat?question=Which teams are in Group A of the World Cup 2026?&
+    conversationId=007
+
+### Venues, grounded by the "Venues" section
+GET http://localhost:8080/chat?
+    question=What are the details of the Estadio Azteca venue, including capacity?&
+    conversationId=007
+
+### Fixtures, grounded by the "Fixtures, Results and Match Statistics" section
+GET http://localhost:8080/chat?question=What were Morocco's group stage fixtures?&conversationId=007
+
+### Match result, same section
+GET http://localhost:8080/chat?question=What was the final result of Morocco vs Haiti?&
+    conversationId=007
+
+### Match statistics, same section
+GET http://localhost:8080/chat?
+    question=Who was Man of the Match in Morocco vs Haiti, and how many cards were shown?&
+    conversationId=007
+
+### Referees, grounded by the "Referees" section
+GET http://localhost:8080/chat?question=Which country is the referee Alireza Faghani from?&
+    conversationId=007
+
+### Group standings, grounded by the "Group Standings" section
+GET http://localhost:8080/chat?
+    question=What is the final group-stage standings table for Group A, ranked by points?&
+    conversationId=007
+
+### Squads, grounded by the "Squads" section, notice how this fails because the checnks put "### Morocco squad" at the end of one chunk and the name of players without identifier at the begining of another chunk
+GET http://localhost:8080/chat?question=Who are some of the players in Morocco's squad?&
+    conversationId=007
+
+###
+GET http://localhost:8080/chat?
+    question=I can confirm that Achraf Hakimi, Ahmed Reda Tagnaouti, Amine Sbaïf, Anass Salah-Eddine, Ayoub El Kaabi, Ayoube Amaimouni, Ayyoub Bouaddi, Azzedine Ounahi, Bilal El Khannouss, Brahim Díaz, Chadi Riad, Chemsdine Talbi, Gessime Yassine, Ismael Saibari (1 Man of the Match award), Issa Diop, Marwane Saâdane, Munir Mohamedi, Neil El Aynaoui, Noussair Mazraoui, Redouane Halhal, Samir El Mourabet, Sofyan Amrabat, Soufiane Rahimi, Yassine Bounou, Youssef Belammari, Zakaria El Ouahdi are all in Morocco's squad?&
+    conversationId=007
+
+###
+GET http://localhost:8080/chat?question=Who are some of the players in Morocco's squad?&
+    conversationId=007
+
+### Player stats, same section (curated stats only)
+GET http://localhost:8080/chat?question=How many goals and assists does Kylian Mbappé have?&
+    conversationId=007
+
+### Leaderboard, grounded by the "Player Leaderboards" section
+GET http://localhost:8080/chat?question=Who are the top goal scorers so far in the World Cup 2026?&
+    conversationId=007
+
+### News, grounded by the "Team News" section
+GET http://localhost:8080/chat?question=What is the latest news about Iran at the World Cup 2026?&
+    conversationId=007
+
+### Controversies, grounded by the "Controversies" section
+GET http://localhost:8080/chat?
+    question=What controversial incidents involved Brazil during the World Cup 2026 group stage?&
+    conversationId=007
+
+### Chat memory: follow-up question in the same conversation
+GET http://localhost:8080/chat?question=What team did I just ask about?&conversationId=007
+
+### Chat memory: a fresh conversation ID should not remember the above
+GET http://localhost:8080/chat?question=What team did I just ask about?&conversationId=999
+
+### Out of scope: the knowledge base doesn't cover this, the model should say so plainly rather than guess
+GET http://localhost:8080/chat?question=What is the weather like in Paris today?&conversationId=42

@@ -1,0 +1,5 @@
+### Demonstrate per call advisor usage with email redaction
+GET http://localhost:8080/players?name=update me at fan@example.com about Kylian Mbappé
+
+### Demonstrate default advisor usage phone redaction
+GET http://localhost:8080/news?team=call me at +61 2 8123 4567 about Morocco

@@ -1,0 +1,67 @@
+### ==================== Tools: plain prompts, the model decides when to call one ====================
+
+### Grounded via the MCP tool get-teams
+GET http://localhost:8080/teams?group=A
+
+### Grounded via the MCP tool get-venue
+GET http://localhost:8080/venues?city=Dallas
+
+### Grounded via the MCP tool get-fixtures
+GET http://localhost:8080/fixtures?team=Morocco&stage=group stage
+
+### No matching MCP tool exists for this one, so the model guesses
+GET http://localhost:8080/featured-match?stage=quarter-finals
+
+### Grounded via the MCP tool get-player
+GET http://localhost:8080/players?name=Kylian Mbappé
+
+### Grounded via the MCP tool get-match-result
+GET http://localhost:8080/matches/result?fixture=Morocco vs Haiti
+
+### Grounded via the MCP tool get-match-stats
+GET http://localhost:8080/matches/stats?fixture=scotland vs brazil
+
+### Grounded via the MCP tool get-referees
+GET http://localhost:8080/referees
+
+### Grounded via the MCP tool get-group-standings
+GET http://localhost:8080/groups/standings?group=A
+
+### Grounded via the MCP tool get-team-journey
+GET http://localhost:8080/teams/journey?team=Morocco
+
+### Grounded via the MCP tools get-goal-leaderboard / get-assist-leaderboard
+GET http://localhost:8080/players/leaderboard?category=goals
+
+### Grounded via the MCP tool get-news; also demonstrates PII redaction on the free-text team param (email)
+GET http://localhost:8080/news?team=update me at fan@example.com about Iran
+
+### Grounded via the MCP tool get-controversies; left as prose, a controversy is a narrative. Also demonstrates PII redaction (phone)
+GET http://localhost:8080/controversies?team=update me on +61 2 8123 4567 about Egypt
+
+### ==================== Resources: the application decides when to fetch these, not the model ====================
+
+### Resource: worldcup://teams/{team}/squad
+GET http://localhost:8080/squad?team=Morocco
+
+### Resource: worldcup://fixtures/{date}
+GET http://localhost:8080/schedule?date=15 June 2026
+
+### Resource: worldcup://stadiums, returned as-is, no model call
+GET http://localhost:8080/stadiums
+
+### Resource: worldcup://groups/{group}/standings
+GET http://localhost:8080/standings?group=A
+
+### ==================== Prompts: templates owned by the server ====================
+
+### Fetches the server's match-recap prompt instead of writing the text here
+GET http://localhost:8080/recap?fixture=Morocco vs Spain
+
+### ==================== Completions: autocomplete over small known sets, no LLM call ====================
+
+### Completion for the match-recap prompt's fixture argument
+GET http://localhost:8080/autocomplete/fixtures?prefix=Morocco
+
+### Completion for the worldcup://teams/{team}/squad resource's team URI variable
+GET http://localhost:8080/autocomplete/squad-teams?prefix=Mo

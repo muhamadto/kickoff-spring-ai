@@ -1,0 +1,164 @@
+<!--
+  - Licensed to Muhammad Hamadto 2026
+  -
+  - Licensed under the Apache License, Version 2.0 (the "License");
+  - you may not use this file except in compliance with the License.
+  - You may obtain a copy of the License at
+  -   https://www.apache.org/licenses/LICENSE-2.0
+  -
+  - See the NOTICE file distributed with this work for additional information regarding copyright ownership.
+  -
+  - Unless required by applicable law or agreed to in writing, software
+  - distributed under the License is distributed on an "AS IS" BASIS,
+  - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  - See the License for the specific language governing permissions and
+  - limitations under the License.
+  -->
+
+<svg style="background-color: #ffffff; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" height="100%"
+  viewBox="0 0 1200 780" width="100%"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter height="110%" id="shadow" width="110%" x="-5%" y="-5%">
+      <feDropShadow dx="0" dy="2" flood-color="#000000" flood-opacity="0.06" stdDeviation="4"/>
+    </filter>
+    <marker id="arrow-purple" markerHeight="7" markerWidth="7" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrow-teal" markerHeight="7" markerWidth="7" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0d9488"/>
+    </marker>
+    <marker id="arrow-red" markerHeight="7" markerWidth="7" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-blue" markerHeight="7" markerWidth="7" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect fill="#f8fafc" height="560" rx="12" stroke="#cbd5e1" stroke-dasharray="5 5" stroke-width="1.5" width="190" x="30" y="85"/>
+  <rect fill="#ffffff" filter="url(#shadow)" height="200" rx="8" stroke="#94a3b8" stroke-width="1" width="170" x="40" y="145"/>
+  <rect fill="#eff6ff" height="560" rx="12" stroke="#2563eb" stroke-width="2" width="560" x="250" y="85"/>
+  <rect fill="#ffffff" filter="url(#shadow)" height="52" rx="8" stroke="#3b82f6" stroke-width="1.5" width="520" x="270" y="132"/>
+  <rect fill="#f0fdf4" height="60" rx="8" stroke="#16a34a" stroke-width="1.5" width="520" x="270" y="196"/>
+  <rect fill="#fdf4ff" height="90" rx="8" stroke="#c084fc" stroke-width="1.5" width="520" x="270" y="268"/>
+  <rect fill="#fef2f2" height="90" rx="8" stroke="#fca5a5" stroke-width="1.5" width="520" x="270" y="370"/>
+  <rect fill="#ffffff" height="60" rx="8" stroke="#94a3b8" stroke-width="1" width="520" x="270" y="472"/>
+  <rect fill="#faf5ff" height="300" rx="12" stroke="#9333ea" stroke-width="2" width="340" x="830" y="85"/>
+  <rect fill="#f3e8ff" height="90" rx="6" stroke="#d8b4fe" stroke-width="1.5" width="300" x="850" y="130"/>
+  <rect fill="#dcfce7" height="90" rx="6" stroke="#4ade80" stroke-width="1.5" width="300" x="850" y="230"/>
+  <rect fill="#fef2f2" height="42" rx="6" stroke="#fca5a5" stroke-width="1" width="300" x="850" y="330"/>
+  <rect fill="#f8fafc" height="248" rx="10" stroke="#94a3b8" stroke-width="1.5" width="340" x="830" y="397"/>
+  <rect fill="#fffbeb" height="95" rx="6" stroke="#f59e0b" stroke-width="1" width="316" x="840" y="540"/>
+  <rect fill="#fffbeb" height="55" rx="8" stroke="#f59e0b" stroke-width="1.5" width="1140" x="30" y="675"/>
+
+  <line marker-end="url(#arrow-blue)" stroke="#2563eb" stroke-width="2" x1="845" x2="885" y1="445" y2="445"/>
+  <line marker-end="url(#arrow-purple)" stroke="#7c3aed" stroke-width="2" x1="845" x2="885" y1="470" y2="470"/>
+  <line marker-end="url(#arrow-teal)" stroke="#0d9488" stroke-width="2" x1="845" x2="885" y1="495" y2="495"/>
+  <line marker-end="url(#arrow-red)" stroke="#dc2626" stroke-width="2" x1="845" x2="885" y1="520" y2="520"/>
+  <line marker-end="url(#arrow-blue)" stroke="#2563eb" stroke-width="2" x1="210" x2="270" y1="155" y2="155"/>
+  <path d="M 790,220 L 805,220 L 805,165 L 830,165" fill="none" marker-end="url(#arrow-purple)" stroke="#7c3aed" stroke-dasharray="4 4"
+    stroke-width="1.5"/>
+  <path d="M 790,336 L 812,336 L 812,265 L 830,265" fill="none" marker-end="url(#arrow-teal)" stroke="#0d9488" stroke-dasharray="4 4"
+    stroke-width="1.5"/>
+  <path d="M 790,438 L 819,438 L 819,275 L 830,275" fill="none" marker-end="url(#arrow-red)" stroke="#dc2626" stroke-dasharray="4 4"
+    stroke-width="1.5"/>
+
+  <rect fill="#ffffff" height="14" rx="3" stroke="#2563eb" stroke-width="1" width="52" x="214" y="138"/>
+  <rect fill="#ffffff" height="15" rx="3" stroke="#7c3aed" stroke-width="1" width="90" x="700" y="203"/>
+  <rect fill="#ffffff" height="15" rx="3" stroke="#0d9488" stroke-width="1" width="90" x="700" y="319"/>
+  <rect fill="#ffffff" height="15" rx="3" stroke="#dc2626" stroke-width="1" width="90" x="700" y="421"/>
+
+  <text fill="#0f172a" font-size="20" font-weight="700" text-anchor="middle" x="600" y="35">Spring AI Evaluation Architecture</text>
+  <text fill="#64748b" font-size="13" text-anchor="middle" x="600" y="55">Focused Lesson View: The Judge Is Not the Model Being Judged</text>
+  <text fill="#334155" font-size="14" font-weight="700" text-anchor="middle" x="125" y="112">Test Suite, Not a Fan</text>
+  <text fill="#64748b" font-size="11" text-anchor="middle" x="125" y="128">No HTTP route added</text>
+  <text fill="#1e293b" font-size="12" font-weight="700" text-anchor="middle" x="125" y="168">KnowledgeBaseEvaluationIT</text>
+  <text fill="#475569" font-size="9" text-anchor="middle" x="125" y="190">@ParameterizedTest over</text>
+  <text fill="#475569" font-size="9" text-anchor="middle" x="125" y="202">4 golden questions</text>
+  <text fill="#64748b" font-size="8.5" text-anchor="middle" x="125" y="224">@BeforeAll seedKnowledgeBase():</text>
+  <text fill="#64748b" font-size="8.5" text-anchor="middle" x="125" y="236">writes a handful of facts via</text>
+  <text fill="#64748b" font-size="8.5" text-anchor="middle" x="125" y="248">the same vectorStore.add(...)</text>
+  <text fill="#64748b" font-size="8.5" text-anchor="middle" x="125" y="260">the ingestion job itself calls</text>
+  <text fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle" x="125" y="282">Fresh Testcontainers PGVector —</text>
+  <text fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle" x="125" y="294">the ingestion job never</text>
+  <text fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle" x="125" y="306">runs against it</text>
+  <text fill="#dc2626" font-size="8.5" font-weight="700" text-anchor="middle" x="125" y="328">@EnabledIfEnvironmentVariable</text>
+  <text fill="#1e40af" font-size="15" font-weight="700" text-anchor="middle" x="530" y="112">The Real Pipeline, Called Directly — No Mocks</text>
+  <text fill="#1d4ed8" font-size="10.5" font-weight="700" text-anchor="middle" x="530" y="152">worldcup2026Service.chat(question,
+    "016-evaluation-test")
+  </text>
+  <text fill="#475569" font-size="9" text-anchor="middle" x="530" y="169">The exact same method /chat calls — classification, retrieval, generation,
+    all real
+  </text>
+  <text fill="#15803d" font-size="10.5" font-weight="700" text-anchor="middle" x="530" y="216">Pipeline unchanged from before</text>
+  <text fill="#166534" font-size="9" text-anchor="middle" x="530" y="232">classify → (QuestionAnswerAdvisor retrieval ∪ step-back retrieval) →
+    generate
+  </text>
+  <text fill="#047857" font-size="8" font-style="italic" text-anchor="middle" x="530" y="246">Every golden question hits the real, guarded pipeline —
+    not a hand-rolled stand-in
+  </text>
+  <text fill="#7e22ce" font-size="10.5" font-weight="700" text-anchor="middle" x="530" y="288">Context for the evaluator:
+    vectorStore.similaritySearch(question)
+  </text>
+  <text fill="#581c87" font-size="9" text-anchor="middle" x="530" y="304">Called directly on the store, topK=3 — not through QuestionAnswerAdvisor,
+  </text>
+  <text fill="#581c87" font-size="9" text-anchor="middle" x="530" y="318">which is a CallAdvisor with no public search method to call instead</text>
+  <text fill="#9333ea" font-size="8" font-style="italic" text-anchor="middle" x="530" y="336">RelevancyEvaluator.evaluate(question, context, answer) —
+    assert isPass() is TRUE
+  </text>
+  <text fill="#7e22ce" font-size="8.5" font-weight="700" text-anchor="middle" x="530" y="350">Scored against context, never against a fixed
+    golden-answer string
+  </text>
+  <text fill="#dc2626" font-size="10.5" font-weight="700" text-anchor="middle" x="530" y="390">FactCheckingEvaluator.evaluate(document, [], "90,000
+    seats")
+  </text>
+  <text fill="#991b1b" font-size="9" text-anchor="middle" x="530" y="406">A deliberately wrong claim about Estadio Akron's capacity</text>
+  <text fill="#991b1b" font-size="9" text-anchor="middle" x="530" y="420">(real figure: 45,664) — against the real retrieved document</text>
+  <text fill="#dc2626" font-size="8.5" font-weight="700" text-anchor="middle" x="530" y="438">assert isPass() is FALSE — this test asserts a failure
+    on purpose
+  </text>
+  <text fill="#991b1b" font-size="8" font-style="italic" text-anchor="middle" x="530" y="452">An evaluation suite that only ever asserts true hasn't
+    proven anything
+  </text>
+  <text fill="#334155" font-size="9.5" font-weight="700" text-anchor="middle" x="530" y="492">Nothing in src/main changed for any of this</text>
+  <text fill="#64748b" font-size="8.5" text-anchor="middle" x="530" y="508">Evaluators and EvaluationTestConfig are all test-scoped
+    only
+  </text>
+  <text fill="#94a3b8" font-size="8" font-style="italic" text-anchor="middle" x="530" y="522">— evaluation infrastructure has no business being part
+    of the running app
+  </text>
+  <text fill="#6b21a8" font-size="15" font-weight="700" text-anchor="middle" x="1000" y="112">Two LLM Model Tiers</text>
+  <text fill="#6b21a8" font-size="10.5" font-weight="700" text-anchor="middle" x="1000" y="150">Production LLM Model</text>
+  <text fill="#581c87" font-size="9" text-anchor="middle" x="1000" y="167">mainChatClient, stepBackChatClient,</text>
+  <text fill="#581c87" font-size="9" text-anchor="middle" x="1000" y="181">classificationChatClient — unchanged</text>
+  <text fill="#581c87" font-size="8.5" font-style="italic" text-anchor="middle" x="1000" y="197">The pipeline under test, unchanged</text>
+  <text fill="#9333ea" font-size="8" text-anchor="middle" x="1000" y="211">The model being scored, not scoring anything</text>
+  <text fill="#15803d" font-size="10.5" font-weight="700" text-anchor="middle" x="1000" y="250">Evaluator LLM Model</text>
+  <text fill="#166534" font-size="9" text-anchor="middle" x="1000" y="267">A cheaper, faster tier for relevancy</text>
+  <text fill="#166534" font-size="9" text-anchor="middle" x="1000" y="281">and for fact-checking</text>
+  <text fill="#166534" font-size="8.5" font-style="italic" text-anchor="middle" x="1000" y="297">Same API key as production, cheaper tier</text>
+  <text fill="#047857" font-size="8" text-anchor="middle" x="1000" y="311">Cheap and fast is enough for a YES/NO</text>
+  <text fill="#dc2626" font-size="9.5" font-weight="700" text-anchor="middle" x="1000" y="349">⚠️ The judge is never the model on trial</text>
+  <text fill="#991b1b" font-size="8" text-anchor="middle" x="1000" y="363">Scoring model deliberately differs from the generating one</text>
+  <text fill="#1e293b" font-size="13" font-weight="700" text-anchor="middle" x="1000" y="420">Execution Step Legend</text>
+  <text fill="#334155" font-size="10" font-weight="600" x="895" y="449">1. Test invokes the real service</text>
+  <text fill="#334155" font-size="10" font-weight="600" x="895" y="474">2. Pipeline calls the production tier</text>
+  <text fill="#334155" font-size="10" font-weight="600" x="895" y="499">3. RelevancyEvaluator calls evaluator tier</text>
+  <text fill="#334155" font-size="10" font-weight="600" x="895" y="524">4. FactCheckingEvaluator calls evaluator tier</text>
+  <text fill="#b45309" font-size="9.5" font-weight="700" text-anchor="middle" x="1000" y="558">Score against context, not a string</text>
+  <text fill="#92400e" font-size="8.5" text-anchor="middle" x="1000" y="574">A fixed golden-answer string breaks the</text>
+  <text fill="#92400e" font-size="8.5" text-anchor="middle" x="1000" y="587">moment the model rephrases a correct answer.</text>
+  <text fill="#92400e" font-size="8.5" text-anchor="middle" x="1000" y="600">Evaluator scores the answer against retrieved</text>
+  <text fill="#b45309" font-size="8.5" font-weight="700" text-anchor="middle" x="1000" y="613">context instead — the same way a human would.</text>
+  <text fill="#2563eb" font-size="7" font-weight="700" text-anchor="middle" x="240" y="148">1. call()</text>
+  <text fill="#7c3aed" font-size="7.5" font-weight="700" text-anchor="middle" x="745" y="214">2. generate()</text>
+  <text fill="#0d9488" font-size="7.5" font-weight="700" text-anchor="middle" x="745" y="330">3. evaluate()</text>
+  <text fill="#dc2626" font-size="7.5" font-weight="700" text-anchor="middle" x="745" y="432">4. evaluate()</text>
+  <text fill="#b45309" font-size="12" font-weight="700" text-anchor="middle" x="600" y="698">EVALUATION LESSON: Score the Real Pipeline's Output
+    Against Context, With a Judge That Isn't the Model on Trial
+  </text>
+  <text fill="#92400e" font-size="11" text-anchor="middle" x="600" y="716">A regression gate for CI, not a production endpoint — and one test
+    deliberately asserts a failure, proving the evaluator can actually catch a contradiction.
+  </text>
+</svg>

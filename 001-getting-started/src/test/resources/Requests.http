@@ -1,0 +1,8 @@
+### Standard blocking request/response endpoint
+GET http://localhost:8080/tournament
+
+### /matches with a date param
+GET http://localhost:8080/matches?date=2026-06-15
+
+### /matches without a date param
+GET http://localhost:8080/matches

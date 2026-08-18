@@ -1,0 +1,138 @@
+<!--
+  - Licensed to Muhammad Hamadto 2026
+  -
+  - Licensed under the Apache License, Version 2.0 (the "License");
+  - you may not use this file except in compliance with the License.
+  - You may obtain a copy of the License at
+  -   https://www.apache.org/licenses/LICENSE-2.0
+  -
+  - See the NOTICE file distributed with this work for additional information regarding copyright ownership.
+  -
+  - Unless required by applicable law or agreed to in writing, software
+  - distributed under the License is distributed on an "AS IS" BASIS,
+  - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  - See the License for the specific language governing permissions and
+  - limitations under the License.
+  -->
+
+<svg style="background-color: #ffffff; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" height="100%"
+  viewBox="0 0 1200 780" width="100%"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter height="110%" id="shadow" width="110%" x="-5%" y="-5%">
+      <feDropShadow dx="0" dy="2" flood-color="#000000" flood-opacity="0.06" stdDeviation="4"/>
+    </filter>
+    <marker id="arrow-green" markerHeight="7" markerWidth="7" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#059669"/>
+    </marker>
+    <marker id="arrow-amber" markerHeight="7" markerWidth="7" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#d97706"/>
+    </marker>
+    <marker id="arrow-blue" markerHeight="7" markerWidth="7" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect fill="#f8fafc" height="480" rx="12" stroke="#cbd5e1" stroke-dasharray="5 5" stroke-width="1.5" width="190" x="30" y="85"/>
+  <rect fill="#ffffff" filter="url(#shadow)" height="150" rx="8" stroke="#94a3b8" stroke-width="1" width="170" x="40" y="145"/>
+  <rect fill="#fef2f2" height="140" rx="8" stroke="#fca5a5" stroke-width="1.5" width="170" x="40" y="310"/>
+  <rect fill="#eff6ff" height="480" rx="12" stroke="#2563eb" stroke-width="2" width="560" x="250" y="85"/>
+  <rect fill="#fffbeb" height="60" rx="8" stroke="#f59e0b" stroke-width="1.5" width="520" x="270" y="130"/>
+  <rect fill="#f0fdf4" height="270" rx="8" stroke="#16a34a" stroke-width="1.5" width="520" x="270" y="200"/>
+  <rect fill="#ffffff" height="52" rx="6" stroke="#86efac" stroke-width="1" width="490" x="285" y="232"/>
+  <rect fill="#ffffff" height="52" rx="6" stroke="#86efac" stroke-width="1" width="490" x="285" y="291"/>
+  <rect fill="#ffffff" height="52" rx="6" stroke="#86efac" stroke-width="1" width="490" x="285" y="350"/>
+  <rect fill="#dcfce7" height="52" rx="6" stroke="#22c55e" stroke-width="1.5" width="490" x="285" y="409"/>
+  <rect fill="#faf5ff" height="230" rx="12" stroke="#9333ea" stroke-width="2" width="340" x="830" y="85"/>
+  <rect fill="#fef2f2" height="50" rx="6" stroke="#fca5a5" stroke-width="1" width="290" x="855" y="132"/>
+  <rect fill="#f8fafc" height="235" rx="10" stroke="#94a3b8" stroke-width="1.5" width="340" x="830" y="330"/>
+  <rect fill="#fffbeb" height="103" rx="6" stroke="#f59e0b" stroke-width="1" width="316" x="840" y="452"/>
+  <rect fill="#fdf4ff" height="65" rx="10" stroke="#c084fc" stroke-width="1.5" width="900" x="270" y="600"/>
+  <rect fill="#fffbeb" height="55" rx="8" stroke="#f59e0b" stroke-width="1.5" width="1140" x="30" y="675"/>
+
+  <line marker-end="url(#arrow-blue)" stroke="#2563eb" stroke-width="2" x1="845" x2="885" y1="378" y2="378"/>
+  <line marker-end="url(#arrow-amber)" stroke="#d97706" stroke-width="2" x1="845" x2="885" y1="406" y2="406"/>
+  <line marker-end="url(#arrow-green)" stroke="#059669" stroke-width="2" x1="845" x2="885" y1="434" y2="434"/>
+  <line marker-end="url(#arrow-blue)" stroke="#2563eb" stroke-width="2" x1="210" x2="270" y1="170" y2="170"/>
+  <line marker-end="url(#arrow-green)" stroke="#059669" stroke-width="2" x1="530" x2="530" y1="470" y2="600"/>
+  <path d="M 775,435 L 800,435 L 800,297 L 830,297" fill="none" marker-end="url(#arrow-purple)" stroke="#7c3aed" stroke-dasharray="4 4"
+    stroke-width="1.5"/>
+
+  <rect fill="#f3e8ff" height="15" rx="4" width="310" x="845" y="292"/>
+  <rect fill="#ffffff" height="16" rx="3" stroke="#2563eb" stroke-width="1" width="70" x="185" y="153"/>
+  <rect fill="#ffffff" height="16" rx="3" stroke="#059669" stroke-width="1" width="120" x="470" y="530"/>
+  <rect fill="#ffffff" height="16" rx="3" stroke="#7c3aed" stroke-width="1" width="90" x="740" y="370"/>
+
+  <text fill="#0f172a" font-size="20" font-weight="700" text-anchor="middle" x="600" y="35">Spring AI Embedding Architecture</text>
+  <text fill="#64748b" font-size="13" text-anchor="middle" x="600" y="55">Focused Lesson View: An Offline, Idempotent Ingestion Job — No Controller,
+    No Fan-Facing Route
+  </text>
+  <text fill="#334155" font-size="14" font-weight="700" text-anchor="middle" x="125" y="112">Operator / CI</text>
+  <text fill="#64748b" font-size="11" text-anchor="middle" x="125" y="128">Not a fan-facing client</text>
+  <text fill="#1e293b" font-size="12.5" font-weight="700" text-anchor="middle" x="125" y="170">./mvnw spring-boot:run</text>
+  <text fill="#475569" font-size="9.5" text-anchor="middle" x="125" y="195">Runs once, embeds the</text>
+  <text fill="#475569" font-size="9.5" text-anchor="middle" x="125" y="209">knowledge base, then exits</text>
+  <text fill="#64748b" font-size="9" font-style="italic" text-anchor="middle" x="125" y="232">No HTTP port ever opens</text>
+  <text fill="#64748b" font-size="9" text-anchor="middle" x="125" y="255">for a REST request —</text>
+  <text fill="#64748b" font-size="9" text-anchor="middle" x="125" y="269">there is no controller</text>
+  <text fill="#dc2626" font-size="11" font-weight="700" text-anchor="middle" x="125" y="332">Populate / Serve Split</text>
+  <text fill="#991b1b" font-size="9" text-anchor="middle" x="125" y="352">Mirrors an earlier</text>
+  <text fill="#991b1b" font-size="9" text-anchor="middle" x="125" y="365">populate/serve split:</text>
+  <text fill="#991b1b" font-size="9" font-weight="600" text-anchor="middle" x="125" y="385">this module populates,</text>
+  <text fill="#991b1b" font-size="9" font-weight="600" text-anchor="middle" x="125" y="399">the next module serves</text>
+  <text fill="#dc2626" font-size="8.5" font-style="italic" text-anchor="middle" x="125" y="422">Real pipelines run this offline,</text>
+  <text fill="#dc2626" font-size="8.5" font-style="italic" text-anchor="middle" x="125" y="435">decoupled from low-latency serving</text>
+  <text fill="#1e40af" font-size="15" font-weight="700" text-anchor="middle" x="530" y="112">Worldcup2026Application implements CommandLineRunner
+  </text>
+  <text fill="#b45309" font-size="11.5" font-weight="700" text-anchor="middle" x="530" y="150">Idempotency gate: SELECT count(*) FROM
+    world_cup_knowledge
+  </text>
+  <text fill="#92400e" font-size="9.5" text-anchor="middle" x="530" y="168">count &gt; 0 → log "already has N chunks, skipping" and return — no
+    re-embedding, no re-paying the compute cost
+  </text>
+  <text fill="#92400e" font-size="9" font-style="italic" text-anchor="middle" x="530" y="182">Run it again: nothing happens the second time</text>
+  <text fill="#15803d" font-size="12" font-weight="700" text-anchor="middle" x="530" y="220">Ingestion Pipeline (only path this app has)</text>
+  <text fill="#166534" font-size="10.5" font-weight="700" x="295" y="248">1. Read knowledge-base.md</text>
+  <text fill="#4b5563" font-size="9.5" x="295" y="263">Covers every category this series has used: teams, venues, fixtures,</text>
+  <text fill="#4b5563" font-size="9.5" x="295" y="277">results, stats, referees, standings, squads, news, controversies</text>
+  <text fill="#166534" font-size="10.5" font-weight="700" x="295" y="309">2. splitIntoSections(text) → one Document per ## heading</text>
+  <text fill="#4b5563" font-size="9.5" x="295" y="325">Each Document keeps its section topic as metadata before any token-level splitting happens
+  </text>
+  <text fill="#166534" font-size="10.5" font-weight="700" x="295" y="368">3. new TokenTextSplitter().apply(sections) → chunks</text>
+  <text fill="#4b5563" font-size="9.5" x="295" y="384">Sections split further into embedding-sized pieces, metadata carried through</text>
+  <text fill="#14532d" font-size="10.5" font-weight="700" x="295" y="427">4. vectorStore.add(chunks) — then the process exits</text>
+  <text fill="#166534" font-size="9.5" x="295" y="443">No LLM call anywhere in this pipeline: embeddings are computed locally, in-process</text>
+  <text fill="#6b21a8" font-size="15" font-weight="700" text-anchor="middle" x="1000" y="112">Local Embedding Model</text>
+  <text fill="#dc2626" font-size="10.5" font-weight="700" text-anchor="middle" x="1000" y="150">No network call at all</text>
+  <text fill="#991b1b" font-size="9" text-anchor="middle" x="1000" y="167">spring-ai-starter-model-transformers</text>
+  <text fill="#581c87" font-size="10.5" x="850" y="205">• all-MiniLM-L6-v2, ONNX, runs in the JVM</text>
+  <text fill="#581c87" font-size="10.5" x="850" y="225">• 384-dimensional vectors</text>
+  <text fill="#581c87" font-size="10.5" x="850" y="245">• Fixed at initialize-schema time —</text>
+  <text fill="#581c87" font-size="10.5" x="864" y="263">switching to a hosted model's 3072-dim option</text>
+  <text fill="#581c87" font-size="10.5" x="864" y="281">later means a new table, not a config edit</text>
+  <text fill="#1e293b" font-size="13" font-weight="700" text-anchor="middle" x="1000" y="353">Execution Step Legend</text>
+  <text fill="#334155" font-size="10" font-weight="600" x="895" y="382">1. Run once, offline</text>
+  <text fill="#334155" font-size="10" font-weight="600" x="895" y="410">2. Idempotency check (JDBC)</text>
+  <text fill="#334155" font-size="10" font-weight="600" x="895" y="438">3. Split → embed (local) → store</text>
+  <text fill="#b45309" font-size="9.5" font-weight="700" text-anchor="middle" x="1000" y="470">Shared contract, not shared code</text>
+  <text fill="#92400e" font-size="8.5" text-anchor="middle" x="1000" y="486">This job writes to world_cup_knowledge;</text>
+  <text fill="#92400e" font-size="8.5" text-anchor="middle" x="1000" y="499">the next module only reads from it. The two</text>
+  <text fill="#92400e" font-size="8.5" text-anchor="middle" x="1000" y="512">apps never call each other — only the table name</text>
+  <text fill="#92400e" font-size="8.5" text-anchor="middle" x="1000" y="525">and vector dimension have to agree.</text>
+  <text fill="#b45309" font-size="8.5" font-weight="700" text-anchor="middle" x="1000" y="542">Every module from here on just reads this table.</text>
+  <text fill="#7e22ce" font-size="12" font-weight="700" text-anchor="middle" x="720" y="620">PGVector Store — table: world_cup_knowledge
+    (initialize-schema: true creates extension + table)
+  </text>
+  <text fill="#581c87" font-size="9.5" text-anchor="middle" x="720" y="638">Populated exactly once by this module; read by every RAG module from
+    the next one onward, never written to again after this job exits
+  </text>
+  <text fill="#2563eb" font-size="8" font-weight="700" text-anchor="middle" x="220" y="165">1. run job</text>
+  <text fill="#059669" font-size="8" font-weight="700" text-anchor="middle" x="530" y="542">3. vectorStore.add()</text>
+  <text fill="#7c3aed" font-size="8" font-weight="700" text-anchor="middle" x="785" y="382">2. embed(chunk)</text>
+  <text fill="#b45309" font-size="12" font-weight="700" text-anchor="middle" x="600" y="698">EMBEDDING LESSON: Ingestion Is Offline Batch Work, Not
+    Part of the Serving Path
+  </text>
+  <text fill="#92400e" font-size="11" text-anchor="middle" x="600" y="716">No controller, no fan ever hits this app. A row-count check makes
+    re-running it a no-op, so it's safe to invoke from CI on every deploy.
+  </text>
+</svg>

@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: Worldcup2026Embedding
+  ai:
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        table-name: world_cup_knowledge
+  datasource:
+    url: jdbc:postgresql://localhost:5432/worldcup
+    username: worldcup
+    password: worldcup
+
+logging:
+  level:
+    root: INFO
+    ai:
+      spring:
+        learning: INFO
+    org:
+      springframework:
+        ai:
+          transformer:
+            splitter: DEBUG

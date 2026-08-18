@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: Worldcup2026
+  threads:
+    virtual:
+      enabled: true
+  ai:
+    google:
+      genai:
+        api-key: ${GOOGLE_AI_API_KEY}
+        chat:
+          model: gemini-3.1-pro-preview
+          flash-model: gemini-3.5-flash
+          flash-lite-model: gemini-3.1-flash-lite
+          temperature: 0.0
+          google-search-retrieval: true
+          include-server-side-tool-invocations: true
+          thinking-budget: 8192
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: DEBUG

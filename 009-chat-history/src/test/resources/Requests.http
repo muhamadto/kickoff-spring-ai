@@ -1,0 +1,18 @@
+### Chat memory: introduce yourself, ask a question
+GET http://localhost:8080/chat?message=My name is Matto, which teams are in Group A of the World Cup 2026?&
+    conversationId=009
+
+### Chat memory: follow-up question in the same conversation
+GET http://localhost:8080/chat?message=What team did I just ask about?&conversationId=009
+
+### Chat memory: a fresh conversation ID should not remember the above
+GET http://localhost:8080/chat?message=What team did I just ask about?&conversationId=999
+
+### Chat history: plain JSON transcript of conversation 009, no LLM call. Both turns above appear
+### here, in order, with role and timestamp; run this again after enough further turns would have
+### pushed these messages out of conversationId=009's window-limited chat memory, and the
+### transcript is unaffected, since it never depended on memory.
+GET http://localhost:8080/chat/009
+
+### A conversation ID nothing has ever asked about returns an empty list, not an error.
+GET http://localhost:8080/chat/999999

@@ -1,0 +1,75 @@
+spring:
+  application:
+    name: Worldcup2026
+  threads:
+    virtual:
+      enabled: true
+  ai:
+    google:
+      genai:
+        api-key: ${GOOGLE_AI_API_KEY}
+        chat:
+          model: gemini-3.1-pro-preview
+          flash-model: gemini-3.5-flash
+          flash-lite-model: gemini-3.1-flash-lite
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        table-name: world_cup_knowledge
+  datasource:
+    url: jdbc:postgresql://localhost:5432/worldcup
+    username: worldcup
+    password: worldcup
+
+worldcup:
+  step-back:
+    top-k: 5
+
+management:
+  prometheus:
+    metrics:
+      export:
+        enabled: true
+        step: 5s
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  tracing:
+    sampling:
+      probability: 1.0
+  opentelemetry:
+    tracing:
+      export:
+        otlp:
+          endpoint: http://localhost:4318/v1/traces
+  metrics:
+    distribution:
+      percentiles-histogram:
+        all: true
+    enable:
+      all: true
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: DEBUG
+
+# Deliberately left unset, at Spring AI's own secure defaults (all false): enabling any of these
+# risks writing fan questions, retrieved knowledge-base content or model output into traces and
+# logs.
+#   spring.ai.chat.client.observations.log-prompt: false
+#   spring.ai.chat.client.observations.log-completion: false
+#   spring.ai.vectorstore.observations.log-query-response: false

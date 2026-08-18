@@ -1,0 +1,44 @@
+### Tool-calling: get-teams. Demonstrates per-call tool-call usage.
+GET http://localhost:8080/teams?group=A
+
+### Tool-calling: get-venue. Demonstrates default tool-call usage.
+GET http://localhost:8080/venues?city=Dallas
+
+### Tool-calling: get-fixtures. Demonstrates per-call tool-call usage.
+GET http://localhost:8080/fixtures?team=Morocco&stage=group stage
+
+### Tool-calling with no matching tool: nothing grounds this one, so the model has to hallucinate. Demonstrates default tool-call usage.
+GET http://localhost:8080/featured-match?stage=quarter-finals
+
+### Tool-calling: get-player. Demonstrates per-call tool-call usage.
+GET http://localhost:8080/players?name=Kylian Mbappé
+
+### Tool-calling: get-match-result. Demonstrates default tool-call usage.
+GET http://localhost:8080/matches/result?fixture=Morocco vs Haiti
+
+### Tool-calling: get-match-stats. Demonstrates per-call tool-call usage.
+GET http://localhost:8080/matches/stats?fixture=Morocco vs Haiti
+
+### Tool-calling: get-referees. Demonstrates default tool-call usage.
+GET http://localhost:8080/referees
+
+### Tool-calling: get-group-standings. Demonstrates per-call tool-call usage.
+GET http://localhost:8080/groups/standings?group=A
+
+### Tool-calling: get-team-journey. Demonstrates default tool-call usage.
+GET http://localhost:8080/teams/journey?team=Morocco
+
+### Tool-calling: get-goal-leaderboard / get-assist-leaderboard. Demonstrates per-call tool-call usage.
+GET http://localhost:8080/players/leaderboard?category=goals
+
+### Tool-calling: get-news. Demonstrates default tool-call usage.
+GET http://localhost:8080/news?team=Iran
+
+### Tool-calling: get-controversies. Left as prose - a controversy is a narrative, not a record. Demonstrates per-call tool-call usage.
+GET http://localhost:8080/controversies?team=Morocco
+
+### Demonstrates PII redaction on any free-text parameter - email (from 004)
+GET http://localhost:8080/players?name=remind me at fan@example.com about Kylian Mbappé
+
+### Demonstrates PII redaction on any free-text parameter - phone (from 004)
+GET http://localhost:8080/news?team=call me at +61 2 8123 4567 about Iran

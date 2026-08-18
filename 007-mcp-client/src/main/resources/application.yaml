@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: Worldcup2026
+  threads:
+    virtual:
+      enabled: true
+  ai:
+    google:
+      genai:
+        api-key: ${GOOGLE_AI_API_KEY}
+        chat:
+          model: gemini-3.1-pro-preview
+          flash-model: gemini-3.5-flash
+          flash-lite-model: gemini-3.1-flash-lite
+          google-search-retrieval: false
+          include-server-side-tool-invocations: false
+          thinking-budget: 8192
+    tools:
+      throw-exception-on-error: true
+    mcp:
+      client:
+        enabled: true
+        type: SYNC
+        request-timeout: 30s
+        toolcallback:
+          enabled: true
+        streamable-http:
+          connections:
+            worldcup:
+              url: http://localhost:8085
+              endpoint: /mcp
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: DEBUG

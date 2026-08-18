@@ -1,0 +1,79 @@
+### Teams and groups, grounded by the "Teams and Groups" knowledge base section
+GET http://localhost:8080/chat?question=Which teams are in Group A of the World Cup 2026?&
+    conversationId=007
+
+### Venues, grounded by the "Venues" section
+GET http://localhost:8080/chat?
+    question=What are the details of the Estadio Azteca venue, including capacity?&
+    conversationId=007
+
+### Fixtures, grounded by the "Fixtures, Results and Match Statistics" section
+GET http://localhost:8080/chat?question=What were Morocco's group stage fixtures?&conversationId=007
+
+### Match result, same section
+GET http://localhost:8080/chat?question=What was the final result of Morocco vs Haiti?&
+    conversationId=007
+
+### Match statistics, same section
+GET http://localhost:8080/chat?
+    question=Who was Man of the Match in Morocco vs Haiti, and how many cards were shown?&
+    conversationId=007
+
+### Referees, grounded by the "Referees" section
+GET http://localhost:8080/chat?question=Which country is the referee Alireza Faghani from?&
+    conversationId=007
+
+### Group standings, grounded by the "Group Standings" section
+GET http://localhost:8080/chat?
+    question=What is the final group-stage standings table for Group A, ranked by points?&
+    conversationId=007
+
+### Squads, grounded by the "Squads" section
+GET http://localhost:8080/chat?question=Who are some of the players in Morocco's squad?&
+    conversationId=007
+
+### Player stats, same section (curated stats only)
+GET http://localhost:8080/chat?question=How many goals and assists does Kylian Mbappé have?&
+    conversationId=007
+
+### Leaderboard, grounded by the "Player Leaderboards" section
+GET http://localhost:8080/chat?question=Who are the top goal scorers so far in the World Cup 2026?&
+    conversationId=007
+
+### News, grounded by the "Team News" section
+GET http://localhost:8080/chat?question=What is the latest news about Iran at the World Cup 2026?&
+    conversationId=007
+
+### Controversies, grounded by the "Controversies" section
+GET http://localhost:8080/chat?
+    question=What controversial incidents involved Brazil during the World Cup 2026 group stage?&
+    conversationId=007
+
+### Chat memory: follow-up question in the same conversation
+GET http://localhost:8080/chat?question=What team did I just ask about?&conversationId=007
+
+### Chat memory: a fresh conversation ID should not remember the above
+GET http://localhost:8080/chat?question=What team did I just ask about?&conversationId=999
+
+### Out of scope: the knowledge base doesn't cover this, the model should say so plainly rather than guess
+GET http://localhost:8080/chat?question=What is the weather like in Paris today?&conversationId=42
+
+### ==================== Why hybrid search: run these same questions against 008-vector-store-rag and compare ====================
+
+### Exact proper noun, an easy match for keyword search but not necessarily for embeddings alone.
+### Watch the advisor: DEBUG log here: HybridSearchAdvisor logs both the dense and sparse hits it
+### fused. Run the identical question against 008-vector-store-rag (vector-only) and compare answers;
+### the difference is clearest on short, common-sounding names embeddings rank poorly, like
+### "Luis Díaz" (a common first name, several unrelated footballers share it).
+GET http://localhost:8080/chat?question=Who was named Man of the Match in Uzbekistan vs Colombia?&
+    conversationId=007
+
+### Same idea with a stadium: "Estadio Akron" is an exact token match for full-text search;
+### an embedding could easily conflate it with any other Mexican stadium in the knowledge base.
+GET http://localhost:8080/chat?question=What is the seating capacity of Estadio Akron?&
+    conversationId=007
+
+### A referee with a short, common name: keyword search finds "Ma Ning" exactly; an embedding
+### has little semantic signal to distinguish one short name from another in the same list.
+GET http://localhost:8080/chat?question=Which country is the referee Ma Ning from?&
+    conversationId=007

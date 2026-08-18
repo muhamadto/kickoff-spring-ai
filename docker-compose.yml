@@ -1,0 +1,98 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: my-postgres
+    environment:
+      POSTGRES_DB: worldcup
+      POSTGRES_USER: worldcup
+      POSTGRES_PASSWORD: worldcup
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+  zipkin:
+    image: openzipkin/zipkin:latest
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    restart: always
+
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:latest
+    container_name: otel-collector
+    command:
+      - "--config=/etc/otelcol-contrib/config.yaml"
+    configs:
+      - source: otel-collector-config
+        target: /etc/otelcol-contrib/config.yaml
+    ports:
+      - "4318:4318"
+    depends_on:
+      - zipkin
+    restart: always
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    configs:
+      - source: prometheus-config
+        target: /etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: always
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    depends_on:
+      - prometheus
+    restart: always
+
+volumes:
+  postgres_data:
+
+configs:
+  prometheus-config:
+    content: |
+      global:
+        scrape_interval: 15s
+
+      scrape_configs:
+        - job_name: worldcup2026
+          metrics_path: /actuator/prometheus
+          static_configs:
+            - targets: ["host.docker.internal:8080"]
+
+      remote_write:
+        - url: ${GRAFANA_CLOUD_PROMETHEUS_URL:-http://localhost:9090/api/v1/write}
+          basic_auth:
+            username: ${GRAFANA_CLOUD_PROMETHEUS_USERNAME:-}
+            password: ${GRAFANA_CLOUD_PROMETHEUS_API_KEY:-}
+
+  otel-collector-config:
+    content: |
+      receivers:
+        otlp:
+          protocols:
+            http:
+              endpoint: 0.0.0.0:4318
+
+      exporters:
+        zipkin:
+          endpoint: http://zipkin:9411/api/v2/spans
+
+      service:
+        pipelines:
+          traces:
+            receivers:
+              - otlp
+            exporters:
+              - zipkin

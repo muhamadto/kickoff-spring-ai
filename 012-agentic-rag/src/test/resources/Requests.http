@@ -1,0 +1,87 @@
+### Teams and groups, grounded by the "Teams and Groups" knowledge base section
+GET http://localhost:8080/chat?question=Which teams are in Group A of the World Cup 2026?&
+    conversationId=007
+
+### Venues, grounded by the "Venues" section
+GET http://localhost:8080/chat?
+    question=What are the details of the Estadio Azteca venue, including capacity?&
+    conversationId=007
+
+### Fixtures, grounded by the "Fixtures, Results and Match Statistics" section
+GET http://localhost:8080/chat?question=What were Morocco's group stage fixtures?&conversationId=007
+
+### Match result, same section
+GET http://localhost:8080/chat?question=What was the final result of Morocco vs Haiti?&
+    conversationId=007
+
+### Match statistics, same section
+GET http://localhost:8080/chat?
+    question=Who was Man of the Match in Morocco vs Haiti, and how many cards were shown?&
+    conversationId=007
+
+### Referees, grounded by the "Referees" section
+GET http://localhost:8080/chat?question=Which country is the referee Alireza Faghani from?&
+    conversationId=007
+
+### Group standings, grounded by the "Group Standings" section
+GET http://localhost:8080/chat?
+    question=What is the final group-stage standings table for Group A, ranked by points?&
+    conversationId=007
+
+### Squads, grounded by the "Squads" section
+GET http://localhost:8080/chat?question=Who are some of the players in Morocco's squad?&
+    conversationId=007
+
+### Player stats, same section (curated stats only)
+GET http://localhost:8080/chat?question=How many goals and assists does Kylian Mbappé have?&
+    conversationId=007
+
+### Leaderboard, grounded by the "Player Leaderboards" section
+GET http://localhost:8080/chat?question=Who are the top goal scorers so far in the World Cup 2026?&
+    conversationId=007
+
+### News, grounded by the "Team News" section
+GET http://localhost:8080/chat?question=What is the latest news about Iran at the World Cup 2026?&
+    conversationId=007
+
+### Controversies, grounded by the "Controversies" section
+GET http://localhost:8080/chat?
+    question=What controversial incidents involved Brazil during the World Cup 2026 group stage?&
+    conversationId=007
+
+### Chat memory: follow-up question in the same conversation
+GET http://localhost:8080/chat?question=What team did I just ask about?&conversationId=007
+
+### Chat memory: a fresh conversation ID should not remember the above
+GET http://localhost:8080/chat?question=What team did I just ask about?&conversationId=999
+
+### Out of scope: the knowledge base doesn't cover this, the model should say so plainly rather than guess
+GET http://localhost:8080/chat?question=What is the weather like in Paris today?&conversationId=42
+
+### ==================== Watching the model decide whether to book: run with logging.level.org.springframework.ai.model.tool=DEBUG ====================
+
+### Retrieval is a fixed advisor either way, still runs on every request regardless of whether
+### bookMatchTicket also fires. Watch advisor: DEBUG for QuestionAnswerAdvisor here.
+GET http://localhost:8080/chat?question=Who was named Man of the Match in Uzbekistan vs Colombia?&
+    conversationId=010
+
+### A clear booking request: the model should call bookMatchTicket exactly once. Compare the
+### parameters it actually sends the tool (visible in the DEBUG log) against the question itself.
+GET http://localhost:8080/chat?question=Book me 2 tickets for Morocco vs Haiti on 24 June 2026&
+    conversationId=010
+
+### Rough edge: mentions a match without asking to book one. Nothing forces the model to tell the
+### difference between "I'd love to see this" and "book me a ticket"; run this a few times and
+### watch model.tool: DEBUG for whether bookMatchTicket fires when it shouldn't.
+GET http://localhost:8080/chat?question=I'd love to be at the Morocco vs Haiti match live&
+    conversationId=010
+
+### Rough edge: a fixture that was never played. Nothing stops bookMatchTicket returning a
+### confident booking reference for a match that doesn't exist in the knowledge base at all.
+GET http://localhost:8080/chat?question=Book me a ticket for Argentina vs England on 1 July 2026&
+    conversationId=010
+
+### Rough edge: ask for the same booking twice in one conversation. bookMatchTicket has no memory
+### of what it already booked, so nothing here notices or prevents a duplicate.
+GET http://localhost:8080/chat?question=Book me 2 tickets for Morocco vs Haiti on 24 June 2026&
+    conversationId=010

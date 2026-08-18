@@ -1,0 +1,165 @@
+<!--
+  - Licensed to Muhammad Hamadto 2026
+  -
+  - Licensed under the Apache License, Version 2.0 (the "License");
+  - you may not use this file except in compliance with the License.
+  - You may obtain a copy of the License at
+  -   https://www.apache.org/licenses/LICENSE-2.0
+  -
+  - See the NOTICE file distributed with this work for additional information regarding copyright ownership.
+  -
+  - Unless required by applicable law or agreed to in writing, software
+  - distributed under the License is distributed on an "AS IS" BASIS,
+  - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  - See the License for the specific language governing permissions and
+  - limitations under the License.
+  -->
+
+<svg style="background-color: #ffffff; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;" height="100%"
+  viewBox="0 0 1200 780" width="100%"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter height="110%" id="shadow" width="110%" x="-5%" y="-5%">
+      <feDropShadow dx="0" dy="2" flood-color="#000000" flood-opacity="0.06" stdDeviation="4"/>
+    </filter>
+    <marker id="arrow-purple" markerHeight="7" markerWidth="7" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrow-amber" markerHeight="7" markerWidth="7" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#d97706"/>
+    </marker>
+    <marker id="arrow-blue" markerHeight="7" markerWidth="7" orient="auto" refX="8" refY="5" viewBox="0 0 10 10">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <rect fill="#f8fafc" height="560" rx="12" stroke="#cbd5e1" stroke-dasharray="5 5" stroke-width="1.5" width="190" x="30" y="85"/>
+  <rect fill="#ffffff" filter="url(#shadow)" height="220" rx="8" stroke="#94a3b8" stroke-width="1" width="170" x="40" y="145"/>
+  <rect fill="#eff6ff" height="560" rx="12" stroke="#2563eb" stroke-width="2" width="560" x="250" y="85"/>
+  <rect fill="#ffffff" filter="url(#shadow)" height="42" rx="8" stroke="#3b82f6" stroke-width="1.5" width="520" x="270" y="132"/>
+  <rect fill="#f0fdf4" height="152" rx="8" stroke="#16a34a" stroke-width="1.5" width="520" x="270" y="184"/>
+  <rect fill="#ffffff" height="44" rx="6" stroke="#86efac" stroke-width="1" width="490" x="284" y="284"/>
+  <rect fill="#fffbeb" height="106" rx="8" stroke="#f59e0b" stroke-width="1.5" width="520" x="270" y="346"/>
+  <rect fill="#fef2f2" height="80" rx="8" stroke="#fca5a5" stroke-width="1.5" width="520" x="270" y="462"/>
+  <rect fill="#faf5ff" height="300" rx="12" stroke="#9333ea" stroke-width="2" width="340" x="830" y="85"/>
+  <rect fill="#ffffff" height="70" rx="6" stroke="#d8b4fe" stroke-width="1.5" width="300" x="850" y="130"/>
+  <rect fill="#ffffff" height="70" rx="6" stroke="#d8b4fe" stroke-width="1.5" width="300" x="850" y="210"/>
+  <rect fill="#fef2f2" height="70" rx="6" stroke="#fca5a5" stroke-width="1" width="300" x="850" y="292"/>
+  <rect fill="#f8fafc" height="248" rx="10" stroke="#94a3b8" stroke-width="1.5" width="340" x="830" y="397"/>
+  <rect fill="#fffbeb" height="95" rx="6" stroke="#f59e0b" stroke-width="1" width="316" x="840" y="540"/>
+  <rect fill="#fffbeb" height="55" rx="8" stroke="#f59e0b" stroke-width="1.5" width="1140" x="30" y="675"/>
+
+  <line marker-end="url(#arrow-blue)" stroke="#2563eb" stroke-width="2" x1="845" x2="885" y1="445" y2="445"/>
+  <line marker-end="url(#arrow-purple)" stroke="#7c3aed" stroke-width="2" x1="845" x2="885" y1="470" y2="470"/>
+  <line marker-end="url(#arrow-amber)" stroke="#d97706" stroke-width="2" x1="845" x2="885" y1="495" y2="495"/>
+  <line marker-end="url(#arrow-amber)" stroke="#059669" stroke-width="2" x1="845" x2="885" y1="520" y2="520"/>
+  <line marker-end="url(#arrow-blue)" stroke="#2563eb" stroke-width="2" x1="210" x2="270" y1="160" y2="160"/>
+  <line marker-end="url(#arrow-blue)" stroke="#2563eb" stroke-width="2" x1="270" x2="210" y1="182" y2="182"/>
+  <path d="M 790,220 L 806,220 L 806,165 L 830,165" fill="none" marker-end="url(#arrow-purple)" stroke="#7c3aed" stroke-dasharray="4 4"
+    stroke-width="1.5"/>
+  <path d="M 790,501 L 812,501 L 812,245 L 830,245" fill="none" marker-end="url(#arrow-amber)" stroke="#d97706" stroke-dasharray="4 4"
+    stroke-width="1.5"/>
+
+  <rect fill="#dcfce7" height="24" rx="4" stroke="#4ade80" width="88" x="284" y="214"/>
+  <rect fill="#dcfce7" height="24" rx="4" stroke="#4ade80" width="88" x="378" y="214"/>
+  <rect fill="#dcfce7" height="24" rx="4" stroke="#4ade80" width="98" x="472" y="214"/>
+  <rect fill="#dcfce7" height="24" rx="4" stroke="#4ade80" width="98" x="576" y="214"/>
+  <rect fill="#fef3c7" height="22" rx="4" stroke="#fbbf24" width="140" x="284" y="374"/>
+  <rect fill="#fee2e2" height="22" rx="4" stroke="#fca5a5" width="140" x="284" y="490"/>
+  <rect fill="#ffffff" height="14" rx="3" stroke="#2563eb" stroke-width="1" width="52" x="214" y="143"/>
+  <rect fill="#ffffff" height="14" rx="3" stroke="#2563eb" stroke-width="1" width="52" x="214" y="185"/>
+  <rect fill="#ffffff" height="15" rx="3" stroke="#7c3aed" stroke-width="1" width="90" x="700" y="203"/>
+  <rect fill="#ffffff" height="14" rx="3" stroke="#d97706" stroke-width="1" width="100" x="650" y="494"/>
+
+  <text fill="#0f172a" font-size="20" font-weight="700" text-anchor="middle" x="600" y="35">Spring AI Observability Architecture</text>
+  <text fill="#64748b" font-size="13" text-anchor="middle" x="600" y="55">Focused Lesson View: Zero Manual Instrumentation - Three Questions, Three
+    Different Trace Shapes
+  </text>
+  <text fill="#334155" font-size="14" font-weight="700" text-anchor="middle" x="125" y="112">Chat Client / HTTP</text>
+  <text fill="#64748b" font-size="11" text-anchor="middle" x="125" y="128">curl / REST Client</text>
+  <text fill="#1e293b" font-size="12" font-weight="700" text-anchor="middle" x="125" y="168">Same three questions,</text>
+  <text fill="#1e293b" font-size="12" font-weight="700" text-anchor="middle" x="125" y="182">Guarded RAG architecture</text>
+  <text fill="#475569" font-size="9" font-style="italic" text-anchor="middle" x="125" y="205">"Who was Man of the Match</text>
+  <text fill="#475569" font-size="9" font-style="italic" text-anchor="middle" x="125" y="217">in Uzbekistan vs Colombia?"</text>
+  <text fill="#475569" font-size="9" font-style="italic" text-anchor="middle" x="125" y="237">"Book 2 tickets for</text>
+  <text fill="#475569" font-size="9" font-style="italic" text-anchor="middle" x="125" y="249">Morocco vs Haiti..."</text>
+  <text fill="#475569" font-size="9" font-style="italic" text-anchor="middle" x="125" y="269">"What's the best</text>
+  <text fill="#475569" font-size="9" font-style="italic" text-anchor="middle" x="125" y="281">pizza topping?"</text>
+  <text fill="#64748b" font-size="8.5" text-anchor="middle" x="125" y="303">No route changed. What's new</text>
+  <text fill="#64748b" font-size="8.5" text-anchor="middle" x="125" y="315">is what you can now SEE</text>
+  <text fill="#2563eb" font-size="8.5" font-weight="700" text-anchor="middle" x="125" y="330">conversationId="123"</text>
+  <text fill="#94a3b8" font-size="8" text-anchor="middle" x="125" y="352">/chat and /chat/{id} unchanged</text>
+  <text fill="#1e40af" font-size="15" font-weight="700" text-anchor="middle" x="530" y="112">The Same Application Pipeline: Now Observed</text>
+  <text fill="#1d4ed8" font-size="10.5" font-weight="700" text-anchor="middle" x="530" y="150">Zero new application code required: Every span comes
+    from pre-existing logic
+  </text>
+  <text fill="#475569" font-size="9" text-anchor="middle" x="530" y="166">Micrometer + a tracer are now on the classpath to receive what Spring AI
+    emits
+  </text>
+  <text fill="#15803d" font-size="11" font-weight="700" text-anchor="middle" x="530" y="204">Trace Shape A: An IN_SCOPE question (the widest trace)
+  </text>
+  <text fill="#166534" font-size="8" font-weight="700" text-anchor="middle" x="328" y="230">chat.client</text>
+  <text fill="#166534" font-size="8" font-weight="700" text-anchor="middle" x="422" y="230">4× advisor</text>
+  <text fill="#166534" font-size="8" font-weight="700" text-anchor="middle" x="521" y="230">2× db.vector</text>
+  <text fill="#166534" font-size="8" font-weight="700" text-anchor="middle" x="625" y="230">3× gen_ai.client</text>
+  <text fill="#166534" font-size="8.5" text-anchor="middle" x="530" y="254">classify → step-back rewrite → step-back search (own span, not an advisor)
+    → mainChatClient
+  </text>
+  <text fill="#166534" font-size="8.5" text-anchor="middle" x="530" y="270">generation, with QuestionAnswerAdvisor's own retrieval producing the
+    second db.vector span
+  </text>
+  <text fill="#15803d" font-size="8.5" font-weight="700" text-anchor="middle" x="530" y="302">Both dense retrievals get their own
+    db.vector.client.operation span
+  </text>
+  <text fill="#4b5563" font-size="8" text-anchor="middle" x="530" y="317">The instrumentation is on the VectorStore bean, not on the advisor chain
+  </text>
+  <text fill="#b45309" font-size="11" font-weight="700" text-anchor="middle" x="530" y="364">Trace Shape B: A booking request (a different shape, not
+    a shorter one)
+  </text>
+  <text fill="#92400e" font-size="8" font-weight="700" text-anchor="middle" x="354" y="389">2× gen_ai.client</text>
+  <text fill="#78350f" font-size="8.5" text-anchor="middle" x="530" y="412">classify (BOOKING_REQUEST) → structured extraction. Zero advisor spans,
+    zero db.vector spans
+  </text>
+  <text fill="#78350f" font-size="8.5" text-anchor="middle" x="530" y="427">spans: neither retrieval path runs once classification routes straight to
+    booking
+  </text>
+  <text fill="#92400e" font-size="8" font-style="italic" text-anchor="middle" x="530" y="443">FixtureRegistryService/BookingService are standard
+    services: No spans, trace shows what they gate
+  </text>
+  <text fill="#dc2626" font-size="11" font-weight="700" text-anchor="middle" x="530" y="480">Trace Shape C: A refusal (the shortest trace of the
+    three)
+  </text>
+  <text fill="#991b1b" font-size="8" font-weight="700" text-anchor="middle" x="354" y="505">1× gen_ai.client</text>
+  <text fill="#7f1d1d" font-size="8.5" text-anchor="middle" x="530" y="528">Exactly one span: classification - nothing downstream ever runs</text>
+  <text fill="#6b21a8" font-size="15" font-weight="700" text-anchor="middle" x="1000" y="112">Observability Infrastructure</text>
+  <text fill="#6b21a8" font-size="10.5" font-weight="700" text-anchor="middle" x="1000" y="150">Zipkin: One trace per request</text>
+  <text fill="#581c87" font-size="9" text-anchor="middle" x="1000" y="167">Brave tracing bridge, 100% sampling</text>
+  <text fill="#581c87" font-size="9" text-anchor="middle" x="1000" y="183">A span per hop, not disconnected log lines</text>
+  <text fill="#6b21a8" font-size="10.5" font-weight="700" text-anchor="middle" x="1000" y="230">Prometheus / Actuator</text>
+  <text fill="#581c87" font-size="9" text-anchor="middle" x="1000" y="247">/actuator/prometheus, scraped every 15s</text>
+  <text fill="#581c87" font-size="9" text-anchor="middle" x="1000" y="263">gen_ai_client_token_usage_total: Cost</text>
+  <text fill="#dc2626" font-size="10" font-weight="700" text-anchor="middle" x="1000" y="312">⚠️ Content stays out of spans</text>
+  <text fill="#991b1b" font-size="8.5" text-anchor="middle" x="1000" y="328">log-prompt/log-completion/log-query-response</text>
+  <text fill="#991b1b" font-size="8.5" text-anchor="middle" x="1000" y="342">default false, documented, left off on purpose</text>
+  <text fill="#991b1b" font-size="8" font-style="italic" text-anchor="middle" x="1000" y="356">a trace has a much wider blast radius than a row</text>
+  <text fill="#1e293b" font-size="13" font-weight="700" text-anchor="middle" x="1000" y="420">What Produces Each Span</text>
+  <text fill="#334155" font-size="10" font-weight="600" x="895" y="449">spring.ai.chat.client: The whole call</text>
+  <text fill="#334155" font-size="10" font-weight="600" x="895" y="474">spring.ai.advisor: Per advisor, per hop</text>
+  <text fill="#334155" font-size="10" font-weight="600" x="895" y="499">gen_ai.client.operation: Each model call</text>
+  <text fill="#334155" font-size="10" font-weight="600" x="895" y="524">db.vector.client.operation: Each retrieval</text>
+  <text fill="#b45309" font-size="9.5" font-weight="700" text-anchor="middle" x="1000" y="558">Why db.vector fires twice on Shape A</text>
+  <text fill="#92400e" font-size="8.5" text-anchor="middle" x="1000" y="574">QuestionAnswerAdvisor's retrieval AND</text>
+  <text fill="#92400e" font-size="8.5" text-anchor="middle" x="1000" y="587">StepBackSearchService's own retrieval both call</text>
+  <text fill="#92400e" font-size="8.5" text-anchor="middle" x="1000" y="600">VectorStore.similaritySearch(...): Instrumentation</text>
+  <text fill="#b45309" font-size="8.5" font-weight="700" text-anchor="middle" x="1000" y="613">is on the bean, not on the advisor interface</text>
+  <text fill="#2563eb" font-size="7" font-weight="700" text-anchor="middle" x="240" y="153">A/B/C in</text>
+  <text fill="#2563eb" font-size="7" font-weight="700" text-anchor="middle" x="240" y="195">Answer out</text>
+  <text fill="#7c3aed" font-size="7.5" font-weight="700" text-anchor="middle" x="745" y="214">spans → trace</text>
+  <text fill="#d97706" font-size="7.5" font-weight="700" text-anchor="middle" x="700" y="504">metrics → registry</text>
+  <text fill="#b45309" font-size="12" font-weight="700" text-anchor="middle" x="600" y="698">OBSERVABILITY LESSON: Instrumentation Was Already There:
+    Configuration Just Turns On the Lights
+  </text>
+  <text fill="#92400e" font-size="11" text-anchor="middle" x="600" y="716">Three different questions produce three structurally different traces. The
+    trace shows exactly what each branch actually did, with zero manual instrumentation code.
+  </text>
+</svg>

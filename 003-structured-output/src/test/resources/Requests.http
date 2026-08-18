@@ -1,0 +1,38 @@
+### Demonstrates entity(ParameterizedTypeReference) on a plain scalar list
+GET http://localhost:8080/teams?group=A
+
+### Demonstrates entity(ParameterizedTypeReference) with native structured output (per call)
+GET http://localhost:8080/venues?city=Dallas
+
+### Demonstrates responseEntity(ParameterizedTypeReference)
+GET http://localhost:8080/fixtures?team=Morocco&stage=group stage
+
+### Demonstrates responseEntity(Class)
+GET http://localhost:8080/featured-match?stage=quarter-finals
+
+### Demonstrates entity(Class) with schema validation
+GET http://localhost:8080/players?name=Kylian Mbappé
+
+### Demonstrates entity(Class) with a custom converter. This will initially fail with 500 error code, update the endpoint by enabling commented code to resolve the 500 http error code.
+GET http://localhost:8080/matches/result?fixture=Morocco vs Haiti
+
+### Demonstrates entity(Class) with schema validation and a custom converter together
+GET http://localhost:8080/matches/stats?fixture=Morocco vs Haiti
+
+### Demonstrates entity(ParameterizedTypeReference) with schema validation: the technique from {@code /players} applied to a collection instead of a single record
+GET http://localhost:8080/referees
+
+### Demonstrates entity(Class) with schema validation failures, check logs and filter by 'JSON validation failed'
+GET http://localhost:8080/referee?name=Abdulrahman Al-Jassim
+
+### Demonstrates responseEntity(ParameterizedTypeReference) with a custom converter and schema validation
+GET http://localhost:8080/groups/standings?group=A
+
+### Demonstrates responseEntity(ParameterizedTypeReference) with schema validation
+GET http://localhost:8080/teams/journey?team=Morocco
+
+### Demonstrates entity(ParameterizedTypeReference) with a custom converter, This will initially fail with 500 error code, update the endpoint by enabling commented code to resolve the 500 http error code.
+GET http://localhost:8080/players/leaderboard?category=goals
+
+### Demonstrates responseEntity(ParameterizedTypeReference) with native structured output (per call)
+GET http://localhost:8080/news?team=Iran

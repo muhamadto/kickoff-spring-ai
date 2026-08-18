@@ -1,0 +1,15 @@
+### intoduction
+GET http://localhost:8080/chat?message=My name is Matto, which teams are in Group A of the World Cup 2026?&
+    conversationId=007
+
+### Venues, grounded by the "Venues" section
+GET http://localhost:8080/chat?
+    message=What are the details of the Estadio Azteca venue, including capacity?&
+    conversationId=007
+
+### Fixtures, grounded by the "Fixtures, Results and Match Statistics" section
+GET http://localhost:8080/chat?message=What were Morocco's group stage fixtures?&conversationId=007
+
+### Match result, same section
+GET http://localhost:8080/chat?message=What was the final result of Morocco vs Haiti?&
+    conversationId=007

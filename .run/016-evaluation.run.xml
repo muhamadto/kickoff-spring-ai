@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="016-evaluation" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <module name="016-evaluation" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="ai.spring.learning.worldcup.Worldcup2026Application" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="ai.spring.learning.worldcup.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: worldcup-mcp-server
+  main:
+    web-application-type: servlet
+    banner-mode: off
+  ai:
+    mcp:
+      server:
+        enabled: true
+        type: sync
+        # STREAMABLE is the current MCP transport; SSE is legacy, STATELESS suits serverless
+        protocol: streamable
+        stdio: false
+        name: worldcup-mcp-server
+        version: 1.0.0
+        annotation-scanner:
+          enabled: true
+        capabilities:
+          completion: true
+          tool: true
+          prompt: true
+          resource: true
+        instructions: "This server provides FIFA World Cup 2026 data: fixtures, results, stadiums, group standings, team squads, and reusable fan prompts"
+        streamable-http:
+          mcp-endpoint: /mcp
+
+server:
+  port: 8085
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    root: INFO
+    org.springframework.ai: DEBUG
+    io.modelcontextprotocol: DEBUG
