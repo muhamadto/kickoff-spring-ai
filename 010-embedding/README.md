@@ -120,6 +120,6 @@ Run it again: the log now reports the table already has rows and skips ingestion
 
 # 4. References
 
-* [Embeddings Model API](https://docs.spring.io/spring-ai/reference/api/embeddings.html)
-* [Spring Embedding Config and Vector Stores](https://docs.spring.io/spring-ai/reference/api/vectordbs.html)
+* [Spring AI - Embeddings Model API](https://docs.spring.io/spring-ai/reference/api/embeddings.html)
+* [Spring AI - Spring Embedding Config and Vector Stores](https://docs.spring.io/spring-ai/reference/api/vectordbs.html)
 * [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)

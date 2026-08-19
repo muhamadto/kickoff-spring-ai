@@ -59,6 +59,15 @@ redacted question or the original?
 
 ---
 
+## Helping Material
+
+* [HOW_RECIPROCAL_RANK_FUSION_WORKS.md](../011-hybrid-search-rag/HOW_RECIPROCAL_RANK_FUSION_WORKS.md)
+* [Postgres full-text search ](https://www.postgresql.org/docs/current/textsearch.html)
+* [What is BM25 (Best Matching 25) Algorithm](https://www.geeksforgeeks.org/nlp/what-is-bm25-best-matching-25-algorithm)
+* [Wikipedia -Okapi BM25](https://en.wikipedia.org/wiki/Okapi_BM25)
+
+---
+
 ## Done?
 
 Open [011-hybrid-search-rag](../011-hybrid-search-rag) and compare. Pay attention to

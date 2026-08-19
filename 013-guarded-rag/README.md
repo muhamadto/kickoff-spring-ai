@@ -165,8 +165,8 @@ left to the model to decide.
 
 ## 4. References
 
-* [Anthropic Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
-* [Spring AI Building Effective Agents](https://docs.spring.io/spring-ai/reference/api/effective-agents.html)
+* [Anthropic - Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
+* [Spring AI - Building Effective Agents](https://docs.spring.io/spring-ai/reference/api/effective-agents.html)
 
 ---
 

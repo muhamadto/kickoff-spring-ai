@@ -54,6 +54,14 @@ Think about: what is a turn? Why does `MessageWindowChatMemory` evict whole turn
 
 ---
 
+## Helping Material
+
+* [Spring AI brief description of chat memory](https://docs.spring.io/spring-ai/reference/api/chatclient.html#_chat_memory)
+* [Spring AI complete guide of Chat Memory](https://docs.spring.io/spring-ai/reference/api/chat-memory.html)
+* [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
+
+---
+
 ## Done?
 
 Open [008-chat-memory](../008-chat-memory) and compare. Pay attention to how

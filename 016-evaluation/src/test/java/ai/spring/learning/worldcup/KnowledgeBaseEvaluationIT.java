@@ -45,23 +45,21 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
 /**
- * Real evaluation, against the real guarded pipeline: every {@code @Test} here goes through {@code Worldcup2026Service.chat(...)}, the same code path
- * {@code /chat} uses, then scores the result with {@link RelevancyEvaluator} or {@link FactCheckingEvaluator} instead of a golden-answer string
- * match, since a fixed expected string would break the moment the model rephrases a correct answer. Context for the evaluators comes straight from
- * {@link VectorStore#similaritySearch(SearchRequest)}: retrieval in the pipeline itself runs through two separate paths,
- * {@code QuestionAnswerAdvisor} (a {@code CallAdvisor} with no public search method to call directly) and {@code StepBackSearchService} (a plain
- * service, but retrieving on a model-generated query this test has no reason to reproduce), so this test does its own plain dense search against the
- * same store rather than replicate either one just for a relevancy check.
+ * Real evaluation, against the real guarded pipeline: every {@code @Test} here goes through {@link Worldcup2026Service#chat(String, String)}, the
+ * same code path {@code /chat} uses, then scores the result with {@link RelevancyEvaluator} or {@link FactCheckingEvaluator} instead of a
+ * golden-answer string match, since a fixed expected string would break the moment the model rephrases a correct answer. Context for the evaluators
+ * comes straight from {@link VectorStore#similaritySearch(SearchRequest)} call running against the test-scoped vector database.
  *
  * <p>
- * {@code Worldcup2026Service} answers through the real, Gemini-backed {@code mainChatClient}, {@code stepBackChatClient} and
- * {@code classificationChatClient} (that's the production pipeline being evaluated, unchanged from {@code 014-query-optimised-rag}). The evaluators
+ * {@link Worldcup2026Service} answers through the real, Gemini-backed {@code mainChatClient}, {@code stepBackChatClient} and
+ * {@code classificationChatClient} (that's the production pipeline being evaluated, unchanged since {@code 014-query-optimised-rag}). The evaluators
  * scoring its output run on Gemini flash-lite instead of the pro model doing the generating: a cheap, fast model is plenty for a YES/NO-shaped
- * judgement. {@code @EnabledIfEnvironmentVariable} below gates the whole class on {@code GOOGLE_AI_API_KEY}, since both halves need it now.
+ * judgement. {@code @EnabledIfEnvironmentVariable} below gates the whole class on {@code GOOGLE_AI_API_KEY}, since this project uses Gemini
+ * exclusively, if you choose another model family change the gate accordingly.
  *
  * <p>
- * The Testcontainers PGVector instance starts empty (010-embedding's ingestion never runs against it), so {@link #seedKnowledgeBase()} writes a
- * handful of the exact facts the golden questions below need directly via {@code VectorStore.add(...)}, the same call 010-embedding itself makes,
+ * The Testcontainers PGVector instance starts empty ({@code 010-embedding}'s ingestion never runs against it), so {@link #seedKnowledgeBase()} writes
+ * a handful of the exact facts the golden questions below need directly via {@code VectorStore.add(...)}, the same call 010-embedding itself makes,
  * just for a small fixture instead of the full generated knowledge base.
  */
 @SpringBootTest
@@ -70,13 +68,6 @@ import org.testcontainers.utility.DockerImageName;
 @EnabledIfEnvironmentVariable(named = "GOOGLE_AI_API_KEY", matches = ".+")
 class KnowledgeBaseEvaluationIT {
 
-	/**
-	 * Started explicitly, in a static initializer, rather than via {@code @Testcontainers}/{@code @Container}: this class needs
-	 * {@code @TestInstance(Lifecycle.PER_CLASS)} for {@link #seedKnowledgeBase()}'s non-static, autowired access to {@code VectorStore}, and under
-	 * {@code PER_CLASS}, JUnit constructs the test instance (triggering Spring's context load, which reads {@code @DynamicPropertySource} values)
-	 * before {@code @Testcontainers}'s {@code BeforeAllCallback} would have started this container. Starting it here, at class-load time, runs before
-	 * any JUnit or Spring extension callback has a chance to run at all.
-	 */
 	static final PostgreSQLContainer postgres =
 			new PostgreSQLContainer(DockerImageName.parse("pgvector/pgvector:pg17").asCompatibleSubstituteFor("postgres"));
 
@@ -86,10 +77,13 @@ class KnowledgeBaseEvaluationIT {
 
 	@Autowired
 	private VectorStore vectorStore;
+
 	@Autowired
 	private Worldcup2026Service worldcup2026Service;
+
 	@Autowired
 	private RelevancyEvaluator relevancyEvaluator;
+
 	@Autowired
 	private FactCheckingEvaluator factCheckingEvaluator;
 
@@ -121,25 +115,50 @@ class KnowledgeBaseEvaluationIT {
 	@ParameterizedTest
 	@MethodSource("goldenQuestions")
 	void answerIsRelevantToRetrievedContext(final String question) {
-		final List<Document> context = vectorStore.similaritySearch(SearchRequest.builder().query(question).topK(3).build());
-		assertThat(context).as("Expected retrieval to find context for: " + question).isNotEmpty();
+		final SearchRequest searchRequest = SearchRequest.builder()
+				.query(question)
+				.topK(3)
+				.build();
+
+		final List<Document> context = vectorStore.similaritySearch(searchRequest);
+
+		assertThat(context)
+				.as("Expected retrieval to find context for: " + question)
+				.isNotEmpty();
 
 		final String answer = worldcup2026Service.chat(question, "016-evaluation-test");
 
-		final EvaluationResponse response = relevancyEvaluator.evaluate(new EvaluationRequest(question, context, answer));
+		final EvaluationRequest evaluationRequest = new EvaluationRequest(question, context, answer);
 
-		assertThat(response.isPass()).as(response.getFeedback()).isTrue();
+		final EvaluationResponse response = relevancyEvaluator.evaluate(evaluationRequest);
+
+		assertThat(response.isPass()).
+				as(response.getFeedback())
+				.isTrue();
 	}
 
 	@Test
 	void factCheckingCatchesAContradictedClaim() {
-		final List<Document> context =
-				vectorStore.similaritySearch(SearchRequest.builder().query("What is the seating capacity of Estadio Akron?").topK(1).build());
-		assertThat(context).as("Expected retrieval to find Estadio Akron's capacity").isNotEmpty();
+		final SearchRequest searchRequest = SearchRequest.builder()
+				.query("What is the seating capacity of Estadio Akron?")
+				.topK(1)
+				.build();
 
-		final EvaluationResponse response = factCheckingEvaluator
-				.evaluate(new EvaluationRequest(context.getFirst().getText(), List.of(), "Estadio Akron has a seating capacity of 90,000."));
+		final List<Document> context = vectorStore.similaritySearch(searchRequest);
 
-		assertThat(response.isPass()).as(response.getFeedback()).isFalse();
+		assertThat(context)
+				.as("Expected retrieval to find Estadio Akron's capacity")
+				.isNotEmpty();
+
+		final String answer = worldcup2026Service.chat(context.getFirst().getText(), "016-evaluation-test");
+
+		final EvaluationRequest evaluationRequest =
+				new EvaluationRequest("Estadio Akron has a seating capacity of 90,000.", List.of(), answer);
+
+		final EvaluationResponse response = factCheckingEvaluator.evaluate(evaluationRequest);
+
+		assertThat(response.isPass())
+				.as(response.getFeedback())
+				.isFalse();
 	}
 }

@@ -63,6 +63,21 @@ Why does a typed, schema-validated response stop making sense once the answer is
 
 ---
 
+## Helping Material
+
+### Embeddings
+
+* [Spring AI - Embeddings Model API](https://docs.spring.io/spring-ai/reference/api/embeddings.html)
+* [Spring AI - Embedding Config and Vector Stores](https://docs.spring.io/spring-ai/reference/api/vectordbs.html)
+* [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
+
+### RAG
+
+* [Spring AI - Retrieval Augmented Generation](https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html)
+* [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
+
+---
+
 ## Done?
 
 Open [010-embedding](../010-embedding) and [010-vector-store-rag](../010-vector-store-rag) and compare. Pay attention to why they are two separate

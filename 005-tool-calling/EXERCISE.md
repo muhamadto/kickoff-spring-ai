@@ -54,6 +54,15 @@ change your answer?
 
 ---
 
+## Helping Material
+
+* [Tool Calling]([https://docs.spring.io/spring-ai/reference/api/tools.html](https://docs.spring.io/spring-ai/reference/api/tools.html#_spring_boot_auto_configuration))
+* [Spring AI Tool Search Tool (Tzolov)](https://spring.io/blog/2025/12/11/spring-ai-tool-search-tools-tzolov)
+* [Anthropic - Code execution with MCP: Building more efficient agents](https://www.anthropic.com/engineering/advanced-tool-use)
+* [Anthropic - Code execution with MCP: Building more efficient agents](https://www.anthropic.com/engineering/code-execution-with-mcp)
+
+---
+
 ## Done?
 
 Open [006-tool-search](../006-tool-search) and compare. Pay attention to what stayed identical (every `@Tool` class, every endpoint) and what changed

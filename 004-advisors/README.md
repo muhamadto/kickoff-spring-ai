@@ -1,7 +1,7 @@
 # 004-Advisors: Spring AI
 
-What is new in this step is the **Advisors API**: a chain of interceptors that sit between the controller and the Chat Model, reading and mutating the
-request (and response) before the call is made.
+What is new in this step is the **Advisors API**: a chain of cross-cutting concerns interceptors that sit between the controller and the Chat Model,
+reading and mutating the request (and response) before the call is made, similar to filter chains.
 
 > The Spring AI Advisors API provides a flexible and powerful way to intercept, modify, and enhance AI-driven interactions in your Spring
 > applications. A common pattern when calling an AI model with user text is to append or augment the prompt with contextual data.
@@ -133,8 +133,8 @@ Watch the `advisor: DEBUG` log on those calls. `PiiRedactionAdvisor` (order 10) 
 
 ## 4. References
 
-* [Spring AI brief description of Advisors](https://docs.spring.io/spring-ai/reference/api/chatclient.html#_advisors)
-* [Spring AI complete guide of Advisors API](https://docs.spring.io/spring-ai/reference/api/advisors.html)
+* [Spring AI - brief description of Advisors](https://docs.spring.io/spring-ai/reference/api/chatclient.html#_advisors)
+* [Spring AI - complete guide of Advisors API](https://docs.spring.io/spring-ai/reference/api/advisors.html)
 * [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
 
 ---

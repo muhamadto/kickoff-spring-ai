@@ -51,6 +51,12 @@ Think about: what is the difference between the tool returning a `Venue` record 
 
 ---
 
+## Helping Material
+
+* [Tool Calling](https://docs.spring.io/spring-ai/reference/api/tools.html)
+
+---
+
 ## Done?
 
 Open [005-tool-calling](../005-tool-calling) and compare. It splits grounding into one `@Tool`
