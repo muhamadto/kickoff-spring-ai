@@ -48,8 +48,14 @@ Think about: `bookMatchTicket` has no memory of what it's already booked. What w
 ### Task 5 - Sketch the fix, in your own words, before you look
 
 For each rough edge above, is the fix something you'd trust the model to improve at with a better prompt or tool description, or something you'd
-rather enforce in code that runs whether or not the model cooperates? Write down which is which before opening `013-guarded-rag`.
+rather enforce in code that runs whether the model cooperates? Write down which is which before opening `013-guarded-rag`.
 
+---
+
+## Helping Material
+
+* [Anthropic - Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)
+* [Spring AI - Building Effective Agents](https://docs.spring.io/spring-ai/reference/api/effective-agents.html)
 ---
 
 ## Done?

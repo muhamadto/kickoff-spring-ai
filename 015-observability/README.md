@@ -84,8 +84,8 @@ is that Micrometer and a tracer are now on the classpath.
 * `docker compose up -d postgres`
 * Start the application
 * Check and run [Requests.http](src/test/resources/Requests.http)
-* Go to [zipkin](http://localhost:9411/zipkin) to check traces
-* Go to [Spring actuator](http://localhost:8080/actuator/metrics), [Prometheus](http://localhost:9090)
+* Explore [Spring actuator](http://localhost:8080/actuator/metrics), [Prometheus](http://localhost:9090) metrics
+* Go to Grafana for [Dashboard](http://localhost:3000/d/spring-ai-observability/spring-ai-observability), [Traces](http://localhost:3000/a/grafana-exploretraces-app/explore?actionView=traceList), and [Metrics](http://localhost:3000/a/grafana-metricsdrilldown-app)
 
 Now compare a step-back trace against the trace for a booking request or classification refusal:
 
@@ -95,6 +95,15 @@ Now compare a step-back trace against the trace for a booking request or classif
   vector search and advisor execution entirely.
 * Out-of-scope deflection requests create the shortest trace, recording a single `gen_ai.client.operation` span for classification before halting
   further downstream operations.
+
+## 4. Exporting to Cloud Observability Providers
+
+> [!Warning]
+> If you are working on a machine provided by your employer, exporting data to any cloud provider for any reason is most likely not allowed without
+legal contract.
+>
+> Please consult your company's policy, your manager and your security team before exporting data.
+
 
 ---
 

@@ -46,6 +46,12 @@ Think about: who would actually call an evaluation endpoint in production, and h
 
 ---
 
+## Helping Material
+
+* [Spring AI - Evaluation Testing](https://docs.spring.io/spring-ai/reference/api/testing.html)
+
+---
+
 ## Done?
 
 Open [016-evaluation](../016-evaluation) and compare. Pay attention to why it stays a test suite, not a route, and to how `KnowledgeBaseEvaluationIT`

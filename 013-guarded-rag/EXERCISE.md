@@ -57,6 +57,12 @@ Think about: does a booking request benefit from a broader, abstracted version o
 
 ---
 
+## Helping Material
+
+* [LangChain - Step-back prompting](https://www.langchain.com/blog/query-transformations#step-back-prompting)
+
+---
+
 ## Done?
 
 Open [014-query-optimised-rag](../014-query-optimised-rag) and compare. Pay attention to where the step-back context actually lands in the prompt, and

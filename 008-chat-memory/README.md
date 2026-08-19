@@ -16,6 +16,9 @@ Spring AI separates chat memory from chat history:
   inputs and application replies, storing no internal assistant messages. Spring AI advises against using `ChatMemory` for full history, so Chat
   history would require a custom persistence.
 
+>[!Note]
+> Chat memory is for **model context**, while chat history is for **user-facing UI**.
+
 This module handles chat memory exclusively.
 
 Added on top of 004:

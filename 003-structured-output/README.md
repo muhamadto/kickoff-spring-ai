@@ -198,6 +198,13 @@ Compare any of these with the questions answered as prose on `002-chat-client`: 
 
 ---
 
-## Exercise
+## 4. References
+
+* [Spring AI - Structured Output Converter](https://docs.spring.io/spring-ai/reference/api/structured-output-converter.html)
+* [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
+
+---
+
+## 5. Exercise
 
 Try the [exercise](EXERCISE.md) before opening `004-advisors`.

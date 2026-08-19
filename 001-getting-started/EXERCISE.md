@@ -66,6 +66,13 @@ Think about: why might you not want this advisor, as-is, in production?
 
 ---
 
+## Helping Material
+
+* [Spring AI Getting Started](https://docs.spring.io/spring-ai/reference/getting-started.html)
+* [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
+
+---
+
 ## Done?
 
 Open [002-chat-client](../002-chat-client) and compare. Pay attention to `GenAiConfig`, including the one bean that exists purely as a warning about

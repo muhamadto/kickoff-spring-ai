@@ -46,6 +46,16 @@ Think about: when would you reach for a trace versus a metric, given they come f
 
 ---
 
+## Helping Material
+
+* [Spring AI - Observability](https://docs.spring.io/spring-ai/reference/observability/index.html)
+* [OpenTelemetry — Semantic Conventions for Generative AI (overview)](https://opentelemetry.io/docs/specs/semconv/gen-ai/)
+* [Micrometer — Naming Meters](https://docs.micrometer.io/micrometer/reference/concepts/naming.html)
+* [Spring Boot - actuator](https://docs.spring.io/spring-boot/reference/actuator/metrics.html)
+* [Spring Boot - tracing](https://docs.spring.io/spring-boot/reference/actuator/tracing.html)
+* [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
+---
+
 ## Done?
 
 Open [015-observability](../015-observability) and compare. Pay attention to how little Java changed compared to how much visibility was gained, and

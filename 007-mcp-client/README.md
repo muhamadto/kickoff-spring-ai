@@ -155,7 +155,6 @@ Watch the server logs while calling: every tool invocation, resource read, promp
 
 * [MCP Client Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-client-boot-starter-docs.html)
 * [Streamable HTTP](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#streamable-http)
-* [Spring AI Tool Search Tool (Tzolov)](https://spring.io/blog/2025/12/11/spring-ai-tool-search-tools-tzolov)
 * [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
 
 ---

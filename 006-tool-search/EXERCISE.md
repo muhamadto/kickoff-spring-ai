@@ -61,6 +61,14 @@ Think about:
 
 ---
 
+## Helping Material
+
+* [MCP Client Boot Starter](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-client-boot-starter-docs.html)
+* [Streamable HTTP](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports#streamable-http)
+* [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
+
+---
+
 ## Done?
 
 Open [007-mcp-server](../007-mcp-server) and [007-mcp-client](../007-mcp-client) and compare. Then point `npx @modelcontextprotocol/inspector` at your

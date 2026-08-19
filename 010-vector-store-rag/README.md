@@ -158,7 +158,7 @@ Retrieval Top-K tuning are critical to building effective RAG systems!
 
 # 5. References
 
-* [Retrieval Augmented Generation](https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html)
+* [Spring AI - Retrieval Augmented Generation](https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html)
 * [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
 
 ---

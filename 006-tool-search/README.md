@@ -102,6 +102,8 @@ where the named tool call is the first and only one.
 
 * [Tool Calling]([https://docs.spring.io/spring-ai/reference/api/tools.html](https://docs.spring.io/spring-ai/reference/api/tools.html#_spring_boot_auto_configuration))
 * [Spring AI Tool Search Tool (Tzolov)](https://spring.io/blog/2025/12/11/spring-ai-tool-search-tools-tzolov)
+* [Anthropic - Code execution with MCP: Building more efficient agents](https://www.anthropic.com/engineering/advanced-tool-use)
+* [Anthropic - Code execution with MCP: Building more efficient agents](https://www.anthropic.com/engineering/code-execution-with-mcp)
 
 ---
 

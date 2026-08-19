@@ -59,6 +59,13 @@ enable schema validation with retries. How many attempts does Spring AI make bef
 
 ---
 
+## Helping Material
+
+* [Spring AI - Structured Output Converter](https://docs.spring.io/spring-ai/reference/api/structured-output-converter.html)
+* [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
+
+---
+
 ## Done?
 
 Open [003-structured-output](../003-structured-output) and compare. Then look at

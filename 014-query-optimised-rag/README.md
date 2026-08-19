@@ -124,7 +124,7 @@ equivalent log line for `StepBackSearchService`
 
 ## 5. Reference
 
-* [Step-back prompting](https://www.langchain.com/blog/query-transformations#step-back-prompting)
+* [LangChain - Step-back prompting](https://www.langchain.com/blog/query-transformations#step-back-prompting)
 
 ---
 

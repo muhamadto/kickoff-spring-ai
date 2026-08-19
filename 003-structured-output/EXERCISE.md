@@ -32,6 +32,14 @@ Think about: why does order matter when one advisor inspects what another mutate
 
 ---
 
+## Helping Material
+
+* [Spring AI - brief description of Advisors](https://docs.spring.io/spring-ai/reference/api/chatclient.html#_advisors)
+* [Spring AI - complete guide of Advisors API](https://docs.spring.io/spring-ai/reference/api/advisors.html)
+* [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
+
+---
+
 ## Done?
 
 Open [004-advisors](../004-advisors) and compare. Pay attention to how `PiiRedactionAdvisor` is registered as a `defaultAdvisor` in `GenAiConfig`, and
