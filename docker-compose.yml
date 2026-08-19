@@ -202,12 +202,12 @@ configs:
         "metadata": {
           "name": "spring-ai-observability",
           "namespace": "default",
-          "uid": "0756db42-ad30-4783-bbb6-92be429c676f",
-          "resourceVersion": "1787141186064009",
+          "uid": "a47ff06b-dc52-4bdb-a425-a387dcf7376a",
+          "resourceVersion": "1787143348720997",
           "generation": 1,
-          "creationTimestamp": "2026-08-19T12:06:26Z",
+          "creationTimestamp": "2026-08-19T12:42:28Z",
           "labels": {
-            "grafana.app/deprecatedInternalID": "377508631650304"
+            "grafana.app/deprecatedInternalID": "386579459149824"
           }
         },
         "spec": {
@@ -250,11 +250,48 @@ configs:
                 "links": [],
                 "title": "Total Tokens / min",
                 "vizConfig": {
-                  "group": "stat",
+                  "group": "timeseries",
                   "kind": "VizConfig",
                   "spec": {
                     "fieldConfig": {
                       "defaults": {
+                        "color": {
+                          "mode": "palette-classic"
+                        },
+                        "custom": {
+                          "axisBorderShow": false,
+                          "axisCenteredZero": false,
+                          "axisColorMode": "text",
+                          "axisLabel": "",
+                          "axisPlacement": "auto",
+                          "barAlignment": 0,
+                          "barWidthFactor": 0.6,
+                          "drawStyle": "line",
+                          "fillOpacity": 0,
+                          "gradientMode": "none",
+                          "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                          },
+                          "insertNulls": false,
+                          "lineInterpolation": "linear",
+                          "lineWidth": 1,
+                          "pointSize": 5,
+                          "scaleDistribution": {
+                            "type": "linear"
+                          },
+                          "showPoints": "auto",
+                          "showValues": false,
+                          "spanNulls": false,
+                          "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                          },
+                          "thresholdsStyle": {
+                            "mode": "off"
+                          }
+                        },
                         "decimals": 0,
                         "thresholds": {
                           "mode": "absolute",
@@ -274,21 +311,19 @@ configs:
                       "overrides": []
                     },
                     "options": {
-                      "colorMode": "value",
-                      "graphMode": "area",
-                      "justifyMode": "auto",
-                      "orientation": "auto",
-                      "percentChangeColorMode": "standard",
-                      "reduceOptions": {
-                        "calcs": [
-                          "lastNotNull"
-                        ],
-                        "fields": "",
-                        "values": false
+                      "legend": {
+                        "calcs": [],
+                        "displayMode": "list",
+                        "enableFacetedFilter": false,
+                        "overflow": "ellipsis",
+                        "placement": "bottom",
+                        "showLegend": true
                       },
-                      "showPercentChange": false,
-                      "textMode": "auto",
-                      "wideLayout": true
+                      "tooltip": {
+                        "hideZeros": false,
+                        "mode": "single",
+                        "sort": "none"
+                      }
                     }
                   },
                   "version": "13.1.3"
@@ -331,11 +366,14 @@ configs:
                 "links": [],
                 "title": "LLM Operations / min",
                 "vizConfig": {
-                  "group": "stat",
+                  "group": "gauge",
                   "kind": "VizConfig",
                   "spec": {
                     "fieldConfig": {
                       "defaults": {
+                        "color": {
+                          "mode": "thresholds"
+                        },
                         "decimals": 1,
                         "thresholds": {
                           "mode": "absolute",
@@ -355,11 +393,17 @@ configs:
                       "overrides": []
                     },
                     "options": {
-                      "colorMode": "value",
-                      "graphMode": "area",
-                      "justifyMode": "auto",
+                      "barShape": "flat",
+                      "barWidthFactor": 0.3,
+                      "effects": {
+                        "barGlow": false,
+                        "centerGlow": false,
+                        "gradient": true
+                      },
+                      "endpointMarker": "point",
+                      "minVizHeight": 75,
+                      "minVizWidth": 75,
                       "orientation": "auto",
-                      "percentChangeColorMode": "standard",
                       "reduceOptions": {
                         "calcs": [
                           "lastNotNull"
@@ -367,9 +411,14 @@ configs:
                         "fields": "",
                         "values": false
                       },
-                      "showPercentChange": false,
-                      "textMode": "auto",
-                      "wideLayout": true
+                      "segmentCount": 1,
+                      "segmentSpacing": 0.3,
+                      "shape": "gauge",
+                      "showThresholdLabels": false,
+                      "showThresholdMarkers": false,
+                      "sizing": "auto",
+                      "sparkline": true,
+                      "textMode": "auto"
                     }
                   },
                   "version": "13.1.3"
@@ -412,11 +461,48 @@ configs:
                 "links": [],
                 "title": "LLM Average Latency",
                 "vizConfig": {
-                  "group": "stat",
+                  "group": "timeseries",
                   "kind": "VizConfig",
                   "spec": {
                     "fieldConfig": {
                       "defaults": {
+                        "color": {
+                          "mode": "palette-classic"
+                        },
+                        "custom": {
+                          "axisBorderShow": false,
+                          "axisCenteredZero": false,
+                          "axisColorMode": "text",
+                          "axisLabel": "",
+                          "axisPlacement": "auto",
+                          "barAlignment": 0,
+                          "barWidthFactor": 0.6,
+                          "drawStyle": "line",
+                          "fillOpacity": 0,
+                          "gradientMode": "none",
+                          "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                          },
+                          "insertNulls": false,
+                          "lineInterpolation": "linear",
+                          "lineWidth": 1,
+                          "pointSize": 5,
+                          "scaleDistribution": {
+                            "type": "linear"
+                          },
+                          "showPoints": "auto",
+                          "showValues": false,
+                          "spanNulls": false,
+                          "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                          },
+                          "thresholdsStyle": {
+                            "mode": "off"
+                          }
+                        },
                         "decimals": 3,
                         "thresholds": {
                           "mode": "absolute",
@@ -436,21 +522,19 @@ configs:
                       "overrides": []
                     },
                     "options": {
-                      "colorMode": "value",
-                      "graphMode": "area",
-                      "justifyMode": "auto",
-                      "orientation": "auto",
-                      "percentChangeColorMode": "standard",
-                      "reduceOptions": {
-                        "calcs": [
-                          "lastNotNull"
-                        ],
-                        "fields": "",
-                        "values": false
+                      "legend": {
+                        "calcs": [],
+                        "displayMode": "list",
+                        "enableFacetedFilter": false,
+                        "overflow": "ellipsis",
+                        "placement": "bottom",
+                        "showLegend": true
                       },
-                      "showPercentChange": false,
-                      "textMode": "auto",
-                      "wideLayout": true
+                      "tooltip": {
+                        "hideZeros": false,
+                        "mode": "single",
+                        "sort": "none"
+                      }
                     }
                   },
                   "version": "13.1.3"
@@ -493,11 +577,48 @@ configs:
                 "links": [],
                 "title": "LLM Max Latency",
                 "vizConfig": {
-                  "group": "stat",
+                  "group": "timeseries",
                   "kind": "VizConfig",
                   "spec": {
                     "fieldConfig": {
                       "defaults": {
+                        "color": {
+                          "mode": "palette-classic"
+                        },
+                        "custom": {
+                          "axisBorderShow": false,
+                          "axisCenteredZero": false,
+                          "axisColorMode": "text",
+                          "axisLabel": "",
+                          "axisPlacement": "auto",
+                          "barAlignment": 0,
+                          "barWidthFactor": 0.6,
+                          "drawStyle": "line",
+                          "fillOpacity": 0,
+                          "gradientMode": "none",
+                          "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                          },
+                          "insertNulls": false,
+                          "lineInterpolation": "linear",
+                          "lineWidth": 1,
+                          "pointSize": 5,
+                          "scaleDistribution": {
+                            "type": "linear"
+                          },
+                          "showPoints": "auto",
+                          "showValues": false,
+                          "spanNulls": false,
+                          "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                          },
+                          "thresholdsStyle": {
+                            "mode": "off"
+                          }
+                        },
                         "decimals": 3,
                         "thresholds": {
                           "mode": "absolute",
@@ -517,21 +638,19 @@ configs:
                       "overrides": []
                     },
                     "options": {
-                      "colorMode": "value",
-                      "graphMode": "area",
-                      "justifyMode": "auto",
-                      "orientation": "auto",
-                      "percentChangeColorMode": "standard",
-                      "reduceOptions": {
-                        "calcs": [
-                          "lastNotNull"
-                        ],
-                        "fields": "",
-                        "values": false
+                      "legend": {
+                        "calcs": [],
+                        "displayMode": "list",
+                        "enableFacetedFilter": false,
+                        "overflow": "ellipsis",
+                        "placement": "bottom",
+                        "showLegend": true
                       },
-                      "showPercentChange": false,
-                      "textMode": "auto",
-                      "wideLayout": true
+                      "tooltip": {
+                        "hideZeros": false,
+                        "mode": "single",
+                        "sort": "none"
+                      }
                     }
                   },
                   "version": "13.1.3"
@@ -580,7 +699,8 @@ configs:
                     "fieldConfig": {
                       "defaults": {
                         "color": {
-                          "mode": "palette-classic"
+                          "mode": "continuous-BlYlRd",
+                          "seriesBy": "last"
                         },
                         "custom": {
                           "axisBorderShow": false,
@@ -591,21 +711,24 @@ configs:
                           "barAlignment": 0,
                           "barWidthFactor": 0.6,
                           "drawStyle": "line",
-                          "fillOpacity": 0,
-                          "gradientMode": "none",
+                          "fillOpacity": 19,
+                          "gradientMode": "scheme",
                           "hideFrom": {
                             "legend": false,
                             "tooltip": false,
                             "viz": false
                           },
                           "insertNulls": false,
-                          "lineInterpolation": "linear",
-                          "lineWidth": 1,
+                          "lineInterpolation": "smooth",
+                          "lineStyle": {
+                            "fill": "solid"
+                          },
+                          "lineWidth": 2,
                           "pointSize": 5,
                           "scaleDistribution": {
                             "type": "linear"
                           },
-                          "showPoints": "auto",
+                          "showPoints": "never",
                           "showValues": false,
                           "spanNulls": false,
                           "stacking": {
@@ -637,7 +760,7 @@ configs:
                     "options": {
                       "legend": {
                         "calcs": [],
-                        "displayMode": "table",
+                        "displayMode": "list",
                         "enableFacetedFilter": false,
                         "overflow": "ellipsis",
                         "placement": "bottom",
@@ -696,7 +819,8 @@ configs:
                     "fieldConfig": {
                       "defaults": {
                         "color": {
-                          "mode": "palette-classic"
+                          "mode": "palette-classic",
+                          "seriesBy": "max"
                         },
                         "custom": {
                           "axisBorderShow": false,
@@ -705,7 +829,7 @@ configs:
                           "axisLabel": "",
                           "axisPlacement": "auto",
                           "barAlignment": 0,
-                          "barWidthFactor": 0.6,
+                          "barWidthFactor": 0.9,
                           "drawStyle": "line",
                           "fillOpacity": 0,
                           "gradientMode": "none",
@@ -716,12 +840,15 @@ configs:
                           },
                           "insertNulls": false,
                           "lineInterpolation": "linear",
+                          "lineStyle": {
+                            "fill": "solid"
+                          },
                           "lineWidth": 1,
-                          "pointSize": 5,
+                          "pointSize": 1,
                           "scaleDistribution": {
                             "type": "linear"
                           },
-                          "showPoints": "auto",
+                          "showPoints": "always",
                           "showValues": false,
                           "spanNulls": false,
                           "stacking": {
@@ -823,7 +950,7 @@ configs:
                           "barAlignment": 0,
                           "barWidthFactor": 0.6,
                           "drawStyle": "line",
-                          "fillOpacity": 0,
+                          "fillOpacity": 25,
                           "gradientMode": "none",
                           "hideFrom": {
                             "legend": false,
@@ -842,7 +969,7 @@ configs:
                           "spanNulls": false,
                           "stacking": {
                             "group": "A",
-                            "mode": "none"
+                            "mode": "normal"
                           },
                           "thresholdsStyle": {
                             "mode": "off"
@@ -869,7 +996,7 @@ configs:
                     "options": {
                       "legend": {
                         "calcs": [],
-                        "displayMode": "table",
+                        "displayMode": "list",
                         "enableFacetedFilter": false,
                         "overflow": "ellipsis",
                         "placement": "bottom",
@@ -877,7 +1004,7 @@ configs:
                       },
                       "tooltip": {
                         "hideZeros": false,
-                        "mode": "multi",
+                        "mode": "single",
                         "sort": "none"
                       }
                     }
@@ -1519,11 +1646,48 @@ configs:
                 "links": [],
                 "title": "Tokens / Request",
                 "vizConfig": {
-                  "group": "stat",
+                  "group": "timeseries",
                   "kind": "VizConfig",
                   "spec": {
                     "fieldConfig": {
                       "defaults": {
+                        "color": {
+                          "mode": "palette-classic"
+                        },
+                        "custom": {
+                          "axisBorderShow": false,
+                          "axisCenteredZero": false,
+                          "axisColorMode": "text",
+                          "axisLabel": "",
+                          "axisPlacement": "auto",
+                          "barAlignment": 0,
+                          "barWidthFactor": 0.6,
+                          "drawStyle": "line",
+                          "fillOpacity": 0,
+                          "gradientMode": "none",
+                          "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                          },
+                          "insertNulls": false,
+                          "lineInterpolation": "linear",
+                          "lineWidth": 1,
+                          "pointSize": 5,
+                          "scaleDistribution": {
+                            "type": "linear"
+                          },
+                          "showPoints": "auto",
+                          "showValues": false,
+                          "spanNulls": false,
+                          "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                          },
+                          "thresholdsStyle": {
+                            "mode": "off"
+                          }
+                        },
                         "decimals": 0,
                         "thresholds": {
                           "mode": "absolute",
@@ -1543,21 +1707,19 @@ configs:
                       "overrides": []
                     },
                     "options": {
-                      "colorMode": "value",
-                      "graphMode": "area",
-                      "justifyMode": "auto",
-                      "orientation": "auto",
-                      "percentChangeColorMode": "standard",
-                      "reduceOptions": {
-                        "calcs": [
-                          "lastNotNull"
-                        ],
-                        "fields": "",
-                        "values": false
+                      "legend": {
+                        "calcs": [],
+                        "displayMode": "list",
+                        "enableFacetedFilter": false,
+                        "overflow": "ellipsis",
+                        "placement": "bottom",
+                        "showLegend": true
                       },
-                      "showPercentChange": false,
-                      "textMode": "auto",
-                      "wideLayout": true
+                      "tooltip": {
+                        "hideZeros": false,
+                        "mode": "single",
+                        "sort": "none"
+                      }
                     }
                   },
                   "version": "13.1.3"
@@ -1680,7 +1842,6 @@ configs:
                             "mode": "off"
                           }
                         },
-                        "decimals": 0,
                         "thresholds": {
                           "mode": "absolute",
                           "steps": [
@@ -1701,7 +1862,7 @@ configs:
                     "options": {
                       "legend": {
                         "calcs": [],
-                        "displayMode": "table",
+                        "displayMode": "list",
                         "enableFacetedFilter": false,
                         "overflow": "ellipsis",
                         "placement": "bottom",
@@ -1709,7 +1870,7 @@ configs:
                       },
                       "tooltip": {
                         "hideZeros": false,
-                        "mode": "multi",
+                        "mode": "single",
                         "sort": "none"
                       }
                     }
@@ -1838,7 +1999,7 @@ configs:
                     "options": {
                       "legend": {
                         "calcs": [],
-                        "displayMode": "table",
+                        "displayMode": "list",
                         "enableFacetedFilter": false,
                         "overflow": "ellipsis",
                         "placement": "bottom",
@@ -1846,7 +2007,7 @@ configs:
                       },
                       "tooltip": {
                         "hideZeros": false,
-                        "mode": "multi",
+                        "mode": "single",
                         "sort": "none"
                       }
                     }
@@ -1973,7 +2134,7 @@ configs:
                     "options": {
                       "legend": {
                         "calcs": [],
-                        "displayMode": "table",
+                        "displayMode": "list",
                         "enableFacetedFilter": false,
                         "overflow": "ellipsis",
                         "placement": "bottom",
@@ -1981,7 +2142,7 @@ configs:
                       },
                       "tooltip": {
                         "hideZeros": false,
-                        "mode": "multi",
+                        "mode": "single",
                         "sort": "none"
                       }
                     }
@@ -2127,7 +2288,7 @@ configs:
                     "options": {
                       "legend": {
                         "calcs": [],
-                        "displayMode": "table",
+                        "displayMode": "list",
                         "enableFacetedFilter": false,
                         "overflow": "ellipsis",
                         "placement": "bottom",
@@ -2135,7 +2296,7 @@ configs:
                       },
                       "tooltip": {
                         "hideZeros": false,
-                        "mode": "multi",
+                        "mode": "single",
                         "sort": "none"
                       }
                     }
@@ -2262,7 +2423,7 @@ configs:
                     "options": {
                       "legend": {
                         "calcs": [],
-                        "displayMode": "table",
+                        "displayMode": "list",
                         "enableFacetedFilter": false,
                         "overflow": "ellipsis",
                         "placement": "bottom",
@@ -2270,7 +2431,7 @@ configs:
                       },
                       "tooltip": {
                         "hideZeros": false,
-                        "mode": "multi",
+                        "mode": "single",
                         "sort": "none"
                       }
                     }
@@ -2297,24 +2458,11 @@ configs:
                             "spec": {
                               "element": {
                                 "kind": "ElementReference",
-                                "name": "panel-1"
-                              },
-                              "height": 4,
-                              "width": 6,
-                              "x": 0,
-                              "y": 0
-                            }
-                          },
-                          {
-                            "kind": "GridLayoutItem",
-                            "spec": {
-                              "element": {
-                                "kind": "ElementReference",
                                 "name": "panel-2"
                               },
                               "height": 7,
-                              "width": 9,
-                              "x": 6,
+                              "width": 12,
+                              "x": 0,
                               "y": 0
                             }
                           },
@@ -2326,9 +2474,22 @@ configs:
                                 "name": "panel-3"
                               },
                               "height": 7,
-                              "width": 9,
-                              "x": 15,
+                              "width": 12,
+                              "x": 12,
                               "y": 0
+                            }
+                          },
+                          {
+                            "kind": "GridLayoutItem",
+                            "spec": {
+                              "element": {
+                                "kind": "ElementReference",
+                                "name": "panel-1"
+                              },
+                              "height": 6,
+                              "width": 12,
+                              "x": 0,
+                              "y": 7
                             }
                           },
                           {
@@ -2338,10 +2499,10 @@ configs:
                                 "kind": "ElementReference",
                                 "name": "panel-4"
                               },
-                              "height": 4,
-                              "width": 6,
-                              "x": 0,
-                              "y": 4
+                              "height": 6,
+                              "width": 12,
+                              "x": 12,
+                              "y": 7
                             }
                           }
                         ]
@@ -2363,10 +2524,10 @@ configs:
                             "spec": {
                               "element": {
                                 "kind": "ElementReference",
-                                "name": "panel-10"
+                                "name": "panel-11"
                               },
-                              "height": 4,
-                              "width": 6,
+                              "height": 7,
+                              "width": 8,
                               "x": 0,
                               "y": 0
                             }
@@ -2376,11 +2537,11 @@ configs:
                             "spec": {
                               "element": {
                                 "kind": "ElementReference",
-                                "name": "panel-11"
+                                "name": "panel-10"
                               },
-                              "height": 4,
-                              "width": 6,
-                              "x": 6,
+                              "height": 7,
+                              "width": 8,
+                              "x": 8,
                               "y": 0
                             }
                           },
@@ -2391,9 +2552,9 @@ configs:
                                 "kind": "ElementReference",
                                 "name": "panel-12"
                               },
-                              "height": 4,
-                              "width": 6,
-                              "x": 12,
+                              "height": 7,
+                              "width": 8,
+                              "x": 16,
                               "y": 0
                             }
                           },
@@ -2404,10 +2565,10 @@ configs:
                                 "kind": "ElementReference",
                                 "name": "panel-13"
                               },
-                              "height": 4,
-                              "width": 6,
-                              "x": 18,
-                              "y": 0
+                              "height": 5,
+                              "width": 24,
+                              "x": 0,
+                              "y": 7
                             }
                           },
                           {
@@ -2420,7 +2581,7 @@ configs:
                               "height": 7,
                               "width": 12,
                               "x": 0,
-                              "y": 4
+                              "y": 12
                             }
                           },
                           {
@@ -2433,7 +2594,7 @@ configs:
                               "height": 7,
                               "width": 12,
                               "x": 12,
-                              "y": 4
+                              "y": 12
                             }
                           }
                         ]
