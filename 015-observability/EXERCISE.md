@@ -14,10 +14,10 @@ Work on a copy of this project. When you're done (or stuck), compare your soluti
 
 ### Task 1 - Pick a judge that isn't the model being judged
 
-Stand up a local model, via Testcontainers, to score answers produced by your real, Gemini-backed pipeline. Don't reuse Gemini as the judge.
+Score answers produced by your real, Gemini-backed pipeline with a different model from the one that generated them. Per Spring AI's own guidance:
+select the best model for the evaluation, which may not be the same model used to generate the response.
 
-Think about: why would using the same model to both answer and judge its own answer be a weaker test than using a different, smaller model to judge
-it?
+Think about: why would using the exact same model to both answer and judge its own answer be a weaker test than using a different model to judge it?
 
 ### Task 2 - Write a relevancy check against real retrieval
 

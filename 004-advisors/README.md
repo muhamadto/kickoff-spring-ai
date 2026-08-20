@@ -5,6 +5,8 @@ reading and mutating the request (and response) before the call is made, similar
 
 > The Spring AI Advisors API provides a flexible and powerful way to intercept, modify, and enhance AI-driven interactions in your Spring
 > applications. A common pattern when calling an AI model with user text is to append or augment the prompt with contextual data.
+> 
+> -- [Spring AI - Advisors API](https://docs.spring.io/spring-ai/reference/api/advisors.html)
 
 The Spring AI framework wraps the user's `Prompt` in a `ChatClientRequest` together with an advisor context object. Each advisor in the chain
 processes that request, potentially modifying it (or blocking it outright by filling the response itself). The final advisor, provided by the
@@ -27,7 +29,13 @@ repeating every structured-output technique from `003-structured-output`. The re
 
 ---
 
-## 1. Configuration
+## 1. Architecture
+
+[![Spring AI Architecture Diagram](./docs/architecture.svg)](./docs/architecture.svg)
+
+---
+
+## 2. Configuration
 
 `application.yaml` is unchanged from 003. `GenAiConfig`'s code changes as follows
 
@@ -52,7 +60,7 @@ public ChatClient geminiPiiRedactionNotAwareChatClient(final ChatClient.Builder 
 
 ---
 
-## 2. Source Code
+## 3. Source Code
 
 Two ways to use the advisor
 
@@ -121,7 +129,7 @@ PII.
 
 ---
 
-## 3. Running and Testing
+## 4. Running and Testing
 
 * Start the application
 * Check and run [Requests.http](src/test/resources/Requests.http)
@@ -131,7 +139,7 @@ Watch the `advisor: DEBUG` log on those calls. `PiiRedactionAdvisor` (order 10) 
 
 ---
 
-## 4. References
+## 5. References
 
 * [Spring AI - brief description of Advisors](https://docs.spring.io/spring-ai/reference/api/chatclient.html#_advisors)
 * [Spring AI - complete guide of Advisors API](https://docs.spring.io/spring-ai/reference/api/advisors.html)
@@ -139,7 +147,7 @@ Watch the `advisor: DEBUG` log on those calls. `PiiRedactionAdvisor` (order 10) 
 
 ---
 
-## 5. Exercise
+## 6. Exercise
 
 Try the [exercise](EXERCISE.md) before opening `005-tool-calling`.
 

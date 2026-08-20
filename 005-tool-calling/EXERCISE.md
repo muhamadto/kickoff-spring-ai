@@ -1,6 +1,6 @@
 # Exercise: Build It Yourself Before Opening [006-tool-search](../006-tool-search)
 
-Every one of your ten tools ships its full schema, name, description, every parameter's description, on every single request, whether the fan's
+Every one of your thirteen tools ships its full schema, name, description, every parameter's description, on every single request, whether the fan's
 question needs one of them or none at all. Before you look at `006-tool-search`, try to fix that yourself using
 [Spring AI's Tool Search Tool](https://spring.io/blog/2025/12/11/spring-ai-tool-search-tools-tzolov):
 instead of sending every tool definition upfront, give the model one tool, a search over the real ones, and let it pull in only what it decides it
@@ -18,7 +18,7 @@ Work on a copy of this project. When you're done (or stuck), compare your soluti
 Turn on request logging at the HTTP client level (or just trust the `advisor: DEBUG` log's tool list) and look at what actually goes out on a request
 to `/venues?city=Dallas`. Count how many tool schemas are in that payload versus how many the question actually needed.
 
-Think about: what happens to that count as this module's ten tools become fifty? A hundred?
+Think about: what happens to that count as this module's thirteen tools become fifty? A hundred?
 
 ### Task 2 - Index your tools instead of sending them directly
 
@@ -46,10 +46,10 @@ Think about: what's the new call that appears before the named tool call? Is it 
 
 ### Task 5 - Decide when this is worth it
 
-This module has ten tools. Spring AI's own benchmarks report roughly one extra request per conversation turn against a 34-64% reduction in total
+This module has thirteen tools. Spring AI's own benchmarks report roughly one extra request per conversation turn against a 34-64% reduction in total
 tokens, measured against real integrations with dozens of tools.
 
-Think about: at ten tools, is the extra round trip worth the token savings here specifically? What tool count, or what kind of tool catalog, would
+Think about: at thirteen tools, is the extra round trip worth the token savings here specifically? What tool count, or what kind of tool catalog, would
 change your answer?
 
 ---

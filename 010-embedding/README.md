@@ -1,6 +1,6 @@
 # 010-Embedding: Spring AI
 
-> [!note]
+> [!Note]
 > Most likely when embedding you will be using a cloud hosted vector store provided by Gemini, Bedrock, ... etc rather than spinning and maintaining
 one yourself. However, it's still good to learn how it works.
 
@@ -17,7 +17,13 @@ embeds it into PGVector, and exits. It has no controller and no REST surface.
 
 ---
 
-## 1. Configuration
+## 1. Architecture
+
+[![Spring AI Architecture Diagram](./docs/architecture.svg)](./docs/architecture.svg)
+
+---
+
+## 2. Configuration
 
 ```xml
 
@@ -69,7 +75,7 @@ just a config change.
 
 ---
 
-## 2. Source Code
+## 3. Source Code
 
 `Worldcup2026Application` implements `CommandLineRunner`. This app is a kinda task runner job, not a microservice, so there is no controller or config
 class for the lesson to live in instead.
@@ -99,7 +105,7 @@ by `TokenTextSplitter` into embedding-sized pieces.
 
 ---
 
-## 3. Running and Testing
+## 4. Running and Testing
 
 Postgres must be up first:
 
@@ -118,7 +124,7 @@ Run it again: the log now reports the table already has rows and skips ingestion
 
 ---
 
-# 4. References
+# 5. References
 
 * [Spring AI - Embeddings Model API](https://docs.spring.io/spring-ai/reference/api/embeddings.html)
 * [Spring AI - Spring Embedding Config and Vector Stores](https://docs.spring.io/spring-ai/reference/api/vectordbs.html)

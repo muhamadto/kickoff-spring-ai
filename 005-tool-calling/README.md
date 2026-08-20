@@ -28,10 +28,6 @@ still does not know match results or venue facts on its own; it knows to ask a t
 
 [![Spring AI Architecture Diagram](./docs/architecture.svg)](./docs/architecture.svg)
 
-[//]: # (<p align="left">)
-[//]: # (  <img src="./docs/architecture.svg" alt="Spring AI Architecture Diagram" width="75%">)
-[//]: # (</p>)
-
 ---
 
 ## 2. Configuration
@@ -106,7 +102,7 @@ public Venue getVenue(
 The tools return data hardcoded in each class. In a real application the same `@Tool` method could call a database or an external API instead; the
 model does not know or care where the data comes from.
 
-> ![Note]
+> [!Note]
 > Ask "pick the must-watch match" is a matter of opinion, not a fact a tool can look up. It keeps relying on the model's own judgment, and with
 > search grounding off in this module, that means it goes back to guessing.
 

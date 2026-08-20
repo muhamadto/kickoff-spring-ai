@@ -105,15 +105,9 @@ public String generateStepBackQuery(final String question) {
 
 Same as `013-guarded-rag`: Postgres and `010-embedding` (at least once) must both have run first.
 
-```bash
-docker compose up -d                                    # from the repository root
-cd ../010-embedding && ./mvnw spring-boot:run           # ingest the knowledge base, once
-cd ../014-query-optimised-rag && ./mvnw spring-boot:run  # this module
-```
-
-```bash
-curl "http://localhost:8080/chat?question=Who was named Man of the Match in Uzbekistan vs Colombia?&conversationId=014"
-```
+* `docker compose up -d postgres`
+* Start the application
+* Check and run [Requests.http](src/test/resources/Requests.http)
 
 Watch `advisor: DEBUG`: `QuestionAnswerAdvisor` logs the exact question it retrieved against, unchanged from every earlier module. There's no
 equivalent log line for `StepBackSearchService`
