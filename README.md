@@ -1,22 +1,28 @@
 # Spring AI Tutorial: World Cup 2026 Fan Assistant
 
-A step-by-step tutorial for building a Spring AI application against Google Gemini, themed as a FIFA World Cup 2026 fan assistant. Each
-module builds directly on the one before it.
+A step-by-step tutorial for building a Spring AI application against Google Gemini, themed as a FIFA World Cup 2026 fan assistant. Each module builds
+directly on the one before it.
 
-This tutorial does not teach AI concept. It assumes you already are familiar with
-
-* Java
-* AI concepts, including
-    01. Models
-    02. Tokens
-    03. Tools calling
-    04. MCPs
-    05. A2A
-    06. Vector stores
-    07. Embedding
-    08. Evaluation
-    09. Observability and time series
-    10. RAG
+>[!Note]
+>This tutorial does not teach AI concepts. It assumes you are already familiar with the following, and instead focuses on teaching you how to use
+>Spring AI to implement them in practice:
+>
+>* Java
+>* Spring Boot
+>* AI concepts, including
+>    * Models
+>    * Tokens
+>    * Tools calling
+>    * MCPs
+>    * Vector stores
+>    * Embedding
+>    * RAG
+>    * Evaluation
+>* Observability, including
+>    * Open Telemetry
+>    * Micrometer
+>    * Tracing
+>    * Metrics
 
 ---
 
@@ -25,7 +31,15 @@ This tutorial does not teach AI concept. It assumes you already are familiar wit
 * Java 25
 * A Google AI API key (`export GOOGLE_AI_API_KEY="..."`)
 * Docker (for Postgres/pgvector, see `docker-compose.yml`)
-* Understanding of AI concepts
+
+## Key Technologies
+
+* **Framework**: Spring Boot 4.1.0, Spring AI
+* **Language**: Java 25
+* **AI Model**: Google Gemini
+* **Database**: PostgreSQL with pgvector (vector embeddings)
+* **Observability**: Grafana (dashboards), Tempo (distributed tracing)
+* **Architecture**: Multi-module Maven project
 
 ## Modules
 
@@ -41,7 +55,7 @@ This tutorial does not teach AI concept. It assumes you already are familiar wit
 | `005-tool-calling`            | Tool calling to ground the model with real tournament data, one `@Tool` class per concern                                                    | [README](005-tool-calling/README.md)            |
 | `006-tool-search`             | The model searches an index of its own tools instead of receiving every schema upfront                                                       | [README](006-tool-search/README.md)             |
 | `007-mcp-server`              | A standalone MCP server publishing tournament tools, resources, prompts and completions                                                      | [README](007-mcp-server/README.md)              |
-| `007-mcp-client`              | The full fan assistant consuming all four MCP capabilities                                                                                  | [README](007-mcp-client/README.md)              |
+| `007-mcp-client`              | The full fan assistant consuming all four MCP capabilities                                                                                   | [README](007-mcp-client/README.md)              |
 | `010-embedding`               | Standalone job: embeds the World Cup 2026 knowledge base into PGVector, then exits                                                           | [README](010-embedding/README.md)               |
 | `010-vector-store-rag`        | Retrieval-augmented generation over that knowledge base, collapsed to one `/chat` endpoint                                                   | [README](010-vector-store-rag/README.md)        |
 | `011-hybrid-search-rag`       | Blends vector similarity search with Postgres full-text search, merged with Reciprocal Rank Fusion                                           | [README](011-hybrid-search-rag/README.md)       |
