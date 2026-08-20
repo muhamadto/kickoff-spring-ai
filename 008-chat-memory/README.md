@@ -50,7 +50,13 @@ the [JDBC session store](https://spring-ai-community.github.io/spring-ai-session
 > `google-search-retrieval` back off so the contrast with real tool calling is clean.
 ---
 
-## 1. Configuration
+## 1. Architecture
+
+[![Spring AI Architecture Diagram](./docs/architecture.svg)](./docs/architecture.svg)
+
+---
+
+## 2. Configuration
 
 `docker-compose.yml` (repository root) gains a `postgres` service, `pgvector/pgvector:pg17`, port `5432`: the first datastore this series uses.
 `application.yaml` adds the JDBC chat memory repository plus the datasource it needs to reach that container, on top of everything from 004:
@@ -106,7 +112,7 @@ default conversation ID.
 
 ---
 
-## 2. Source Code
+## 3. Source Code
 
 ### `/chat` endpoint
 
@@ -127,7 +133,7 @@ public String chat(final String conversationId, final String message) {
 
 ---
 
-## 3. Running and Testing
+## 4. Running and Testing
 
 You need Postgres running on `localhost:5432` (`docker compose up -d postgres` from the repository root; the automated tests spin up a `postgres:17`
 container via Testcontainers instead).
@@ -141,7 +147,7 @@ is called.
 
 ---
 
-## 4. References
+## 5. References
 
 * [Spring AI brief description of chat memory](https://docs.spring.io/spring-ai/reference/api/chatclient.html#_chat_memory)
 * [Spring AI complete guide of Chat Memory](https://docs.spring.io/spring-ai/reference/api/chat-memory.html)
@@ -149,7 +155,7 @@ is called.
 
 ---
 
-## 5. Exercise
+## 6. Exercise
 
 Try the [exercise](EXERCISE.md) before opening `010-embedding` and `010-vector-store-rag`.
 

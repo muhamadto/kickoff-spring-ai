@@ -36,14 +36,7 @@ Verified against the real artifacts, not the README's prose:
 - **Transport** (`a2a-java-sdk-client-transport-jsonrpc` / `-spi`): `ClientTransport`,
   `JSONRPCTransportProvider` — the layer a Spring integration would eventually wrap.
 
-## Two ways to build this
-
-**Option A**, below, is a dedicated module pair, model-driven via `@Tool` — the closer match to how
-`007-mcp-server`/`007-mcp-client` introduced MCP as its own thing. **Option B** is cheaper: no new module, delegate directly out of an existing
-module's already-deterministic booking branch. They teach slightly different lessons (model-driven delegation vs. code-driven delegation) and either
-is a reasonable place to start.
-
-### Option A: dedicated `016-a2a-server`/`016-a2a-client` pair
+## Dedicated `016-a2a-server`/`016-a2a-client` pair
 
 Mirror the `007-mcp-server`/`007-mcp-client` split rather than pointing at a real external agent, to keep the whole series self-contained:
 
@@ -56,65 +49,11 @@ Mirror the `007-mcp-server`/`007-mcp-client` split rather than pointing at a rea
   `Task` reaches a terminal state, and return the artifact content as the tool's result. Same shape as `007-mcp-client`'s MCP tools; the difference is
   what's behind the call is a whole autonomous remote agent instead of a function or an MCP server.
 
-### Option B: delegate directly from `015-observability`, no new module
-
-`015-observability` is the better host for this than an earlier module, for a reason specific to what it teaches: everything it currently does gets
-traced *for free*, because every hop is a Spring AI call (`ChatClient`, `VectorStore`) and Spring AI instruments those itself once Micrometer and a
-tracer are on the classpath. An A2A delegation call is a plain HTTP round trip made through the A2A SDK's own client, with no Spring AI awareness at
-all — it would produce **no span** unless something wraps it deliberately. That gap is exactly the module's own point generalised: Spring AI's
-auto-instrumentation covers Spring AI's own surface, and anything outside that surface (a raw JSON-RPC call to another agent, here) is on you to
-instrument.
-
-The seam to build on is `Worldcup2026Service.respond(...)`'s `BOOKING_REQUEST` branch:
-
-```java
-case BOOKING_REQUEST ->bookingService.
-
-book(conversationId, extractBookingRequest(question));
-```
-
-`bookingService.book(...)` already receives a `BookingRequest` that's been through classification and structured extraction — nothing upstream of this
-line changes. The change is what handles the request once it's known to be a genuine, well-formed booking:
-
-1. **Dependencies.** Add `org.a2aproject.sdk:a2a-java-sdk-spec`, `-http-client`,
-   `-client-transport-jsonrpc`, `-client-transport-spi` to `pom.xml` (none are BOM-managed, same situation `lucene-core` was in for
-   `006-tool-search` — pin versions explicitly and verify they resolve before writing code against them).
-2. **New class, `ai.spring.learning.worldcup.a2a.BookingAgentClient`** (`@Component`), holding: the target agent's base URL as a config property
-   (`worldcup.a2a.booking-agent-url`, mirroring how
-   `007-mcp-client` configures its MCP connection), a cached `AgentCard` resolved once via
-   `A2ACardResolver` against `{base-url}/.well-known/agent.json`, and a `ClientTransport` obtained from `JSONRPCTransportProvider`.
-3. **One method**, matching `BookingService.book(...)`'s exact signature so the call site barely changes:
-   `String book(String conversationId, BookingRequest request)`. Internally: build a
-   `Message`/`MessageSendParams` from the request's fields, send it via
-   `A2AMethods.SEND_MESSAGE_METHOD`, poll `GET_TASK_METHOD` (simplest first pass;
-   `SUBSCRIBE_TO_TASK_METHOD` later) until the returned
-   `Task` reaches a terminal `TaskState`, then return the artifact's text.
-4. **Wrap the call in a manual `Observation`.** `ObservationRegistry` is already auto-configured because Actuator and a tracer are already on this
-   module's classpath; inject it into
-   `BookingAgentClient` and wrap the send/poll round trip in an observation (name it in the same style Spring AI uses, e.g. `a2a.client.delegate`), so
-   the resulting trace shows a span for the remote hop too instead of a silent gap between the classification span and the response being logged.
-5. **Swap the call site.** `Worldcup2026Service` gets a `BookingAgentClient` alongside
-   `BookingService`
-   (constructor injection, same pattern as every other dependency in that class) and the
-   `BOOKING_REQUEST`
-   branch calls it instead. Nothing else in `respond(...)`, `chat(...)`, or the controller changes —
-   `chatHistoryRepository.record(...)` already logs whatever string comes back, so the audit trail covers the delegated path with zero additional
-   code.
-6. **Fallback, optional but consistent with this series' style.** `007-mcp-client` starts fine with no live MCP server by resolving an empty tool
-   list; do the same here — catch the SDK's
-   `A2AClientException` around the round trip and fall back to the local `BookingService.book(...)`
-   if the remote agent is unreachable, rather than failing the whole request.
-
-One thing specific to Option B: `book(...)`'s return value goes straight into
-`chatHistoryRepository.record(...)` and back to the fan as-is, with no model in between to give it a second look. See "Where guardrails apply" below —
-it applies here even more directly than in Option A.
-
-## Where guardrails apply, either way
+## Where guardrails apply
 
 Treat a remote agent's output with at least as much suspicion as any other tool result — arguably more, since its prompting isn't under this
 application's control. Applying `013-guarded-rag`'s pattern here means: classify/validate *before* delegating (should this question even go to the
-remote agent? — already true by construction in Option B, since the branch is only reached after classification), and validate/sanitize what comes
-back *before* it reaches the fan or, in Option A, re-enters this application's own model context.
+remote agent?), and validate/sanitize what comes back *before* it re-enters this application's own model context.
 
 ## Open questions for whoever picks this up
 

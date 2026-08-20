@@ -15,17 +15,14 @@ Work on a copy of this project. When you're done (or stuck), compare your soluti
 ### Task 1 - Turn on what's already there
 
 Spring AI instruments `ChatClient` calls, advisor execution and vector store operations via Micrometer automatically, with no Spring AI-specific code
-required, as soon as Micrometer and a tracer are on the classpath. Add `spring-boot-starter-actuator`, a Micrometer tracing bridge, and a tracer
-exporter of your choice (Zipkin is a reasonable default; a Zipkin container is one line in
-`docker-compose.yml`).
+required, as soon as Micrometer and a tracer are on the classpath. Add `spring-boot-starter-actuator`, a Micrometer tracing bridge, and the OTLP exporter to send traces to the project's OTel collector (which forwards them to Tempo).
 
 Think about: if the instrumentation is automatic, what exactly is left for you to configure versus what Spring AI already does for you?
 
 ### Task 2 - Trace three different request shapes
 
 Send a general question, a booking request, and a message that gets refused by
-`MessageClassificationService`, and look at the resulting trace for each in your tracing backend. Write down how many spans each one produces, and
-which components show up in each.
+`MessageClassificationService`, and look at the resulting trace for each in your tracing backend (Tempo/Grafana). Write down how many spans each one produces, and which components show up in each.
 
 Think about: why should a classification refusal produce the shortest trace of the three? What does a booking request's trace tell you about which
 retrieval paths never ran for it?
@@ -49,8 +46,8 @@ Think about: when would you reach for a trace versus a metric, given they come f
 ## Helping Material
 
 * [Spring AI - Observability](https://docs.spring.io/spring-ai/reference/observability/index.html)
-* [OpenTelemetry — Semantic Conventions for Generative AI (overview)](https://opentelemetry.io/docs/specs/semconv/gen-ai/)
-* [Micrometer — Naming Meters](https://docs.micrometer.io/micrometer/reference/concepts/naming.html)
+* [OpenTelemetry - Semantic Conventions for Generative AI (overview)](https://opentelemetry.io/docs/specs/semconv/gen-ai/)
+* [Micrometer - Naming Meters](https://docs.micrometer.io/micrometer/reference/concepts/naming.html)
 * [Spring Boot - actuator](https://docs.spring.io/spring-boot/reference/actuator/metrics.html)
 * [Spring Boot - tracing](https://docs.spring.io/spring-boot/reference/actuator/tracing.html)
 * [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)
@@ -58,6 +55,4 @@ Think about: when would you reach for a trace versus a metric, given they come f
 
 ## Done?
 
-Open [015-observability](../015-observability) and compare. Pay attention to how little Java changed compared to how much visibility was gained, and
-to the commented-out, deliberately-disabled
-`log-prompt`/`log-completion`/`log-query-response` properties in `application.yaml`.
+Open [015-observability](../015-observability) and compare. Ensure your `docker-compose.yml` includes the observability stack (OTel collector, Tempo, Prometheus, and Grafana) so you can view your traces. Use `docker compose up -d` to start the full environment, including Postgres and the observability tools. Pay attention to how little Java changed compared to how much visibility was gained, and to the commented-out, deliberately-disabled `log-prompt`/`log-completion`/`log-query-response` properties in `application.yaml`.

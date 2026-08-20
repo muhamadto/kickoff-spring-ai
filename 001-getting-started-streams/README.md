@@ -101,7 +101,9 @@ public class Worldcup2026Controller {
 ## 4. Running and Testing
 
 * Start the application, then test the endpoint. Use the `-N` (no-buffer) flag to see the tokens arriving in real time:
-* Check and run [Requests.http](src/test/resources/Requests.http)
+```bash
+curl -N -H "Accept: text/event-stream" http://localhost:8080/matches
+```
 
 > [!Warning]
 > **Why Gemini Can Look Like It Is Not Streaming?** Gemini streams in a few large chunks. For a short answer that is often a single chunk, so a

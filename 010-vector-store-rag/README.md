@@ -9,7 +9,7 @@ model.
 
 > [!Note]
 > **RAG does not require a vector store.** The core concept is simply fetching relevant info first and feeding it into the prompt. How you retrieve
-that data is entirely an implementation choice.
+> that data is entirely an implementation choice.
 >
 > Ways to retrieve data include:
 > * Vector search to find text with similar meanings, which works well for unstructured prose but often misses exact terms.
@@ -140,23 +140,23 @@ Watch the `advisor: DEBUG` log: `QuestionAnswerAdvisor` shows the retrieved chun
 
 > [!Warning]
 > When asking "Who are some of the players in Morocco's squad?", the LLM responds that it cannot answer based on the provided context—even though the
-data exists in our raw source files!
+> data exists in our raw source files!
 >
 > What is actually happening under the hood:
 >
 > * Vector Retrieval Failed: Because of a naive chunking strategy that grouped several team squads into single large chunks without distinct
-    structural anchors, the embedding model diluted the semantic score for Morocco. As a result, PGVector's default topK=4 similarity search retrieved
-    chunks for Spain, Senegal, and England instead.
+>   structural anchors, the embedding model diluted the semantic score for Morocco. As a result, PGVector's default topK=4 similarity search retrieved
+>   chunks for Spain, Senegal, and England instead.
 >
 > * Guardrails Kept the System Honest: Bound by the system prompt ("Answer only from the context provided..."), the LLM correctly refused to
-    hallucinate the roster when the chunk was missing from its context.
+> hallucinate the roster when the chunk was missing from its context.
 >
 > Key Takeaway: Perfect prompt engineering and guardrails cannot compensate for poor document retrieval. Chunking strategy, document structure, and
-Retrieval Top-K tuning are critical to building effective RAG systems!
+> Retrieval Top-K tuning are critical to building effective RAG systems!
 
 ---
 
-# 5. References
+## 5. References
 
 * [Spring AI - Retrieval Augmented Generation](https://docs.spring.io/spring-ai/reference/api/retrieval-augmented-generation.html)
 * [AI for Java Developers by Dan Vega](https://www.youtube.com/watch?v=FzLABAppJfM)

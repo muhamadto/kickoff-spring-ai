@@ -4,6 +4,8 @@ Java code is unchanged from previuso module.
 
 > Spring AI observability features in the Spring ecosystem to provide insights into AI-related operations. It provides metrics and tracing
 > capabilities for its core components: `ChatClient` (including `Advisor`), `ChatModel`, `EmbeddingModel`, `ImageModel`, and `VectorStore`.
+> 
+> -- [Spring AI - Observability](https://docs.spring.io/spring-ai/reference/observability/index.html)
 
 Spring AI instruments all of this itself, via Micrometer, as soon as the observability infrastructure (Micrometer plus a tracer) is on the classpath.
 This module wires up the plumbing to actually receive them: Actuator, a Prometheus registry, and tracing exported to Zipkin, so a single `/chat`
@@ -72,14 +74,14 @@ management:
 
 ---
 
-## 2. Source Code
+## 3. Source Code
 
 There is no new Java in this module. All telemetry Spring AI produces comes from code that already existed in `014-query-optimised-rag`; what changed
 is that Micrometer and a tracer are now on the classpath.
 
 ---
 
-## 3. Running and Testing
+## 4. Running and Testing
 
 * `docker compose up -d postgres`
 * Start the application
@@ -96,18 +98,18 @@ Now compare a step-back trace against the trace for a booking request or classif
 * Out-of-scope deflection requests create the shortest trace, recording a single `gen_ai.client.operation` span for classification before halting
   further downstream operations.
 
-## 4. Exporting to Cloud Observability Providers
+## 5. Exporting to Cloud Observability Providers
 
 > [!Warning]
 > If you are working on a machine provided by your employer, exporting data to any cloud provider for any reason is most likely not allowed without
-legal contract.
+> legal contract.
 >
 > Please consult your company's policy, your manager and your security team before exporting data.
 
 
 ---
 
-## 5. References
+## 6. References
 
 * [Spring AI - Observability](https://docs.spring.io/spring-ai/reference/observability/index.html)
 * [OpenTelemetry — Semantic Conventions for Generative AI (overview)](https://opentelemetry.io/docs/specs/semconv/gen-ai/)
@@ -118,6 +120,6 @@ legal contract.
 
 ---
 
-## 5. Exercise
+## 7. Exercise
 
 Try the [exercise](EXERCISE.md) before opening `016-evaluation`.

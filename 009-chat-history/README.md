@@ -28,7 +28,13 @@ Added on top of `008-chat-memory`:
 
 ---
 
-## 1. Configuration
+## 1. Architecture
+
+[![Spring AI Architecture Diagram](./docs/architecture.svg)](./docs/architecture.svg)
+
+---
+
+## 2. Configuration
 
 No new dependency: `JdbcTemplate` and the `postgresql` driver are already on the classpath from
 `008-chat-memory`.
@@ -48,7 +54,7 @@ CREATE INDEX IF NOT EXISTS chat_history_conversation_id_idx ON chat_history (con
 
 ---
 
-## 2. Source Code
+## 3. Source Code
 
 `Worldcup2026Service` separates deciding the answer from recording it:
 
@@ -91,25 +97,19 @@ public List<ChatHistoryEntry> findByConversationId(final String conversationId) 
 
 ---
 
-## 3. Running and Testing
+## 4. Running and Testing
 
 Same as `008-chat-memory`: Postgres must be running first.
 
-```bash
-docker compose up -d postgres                        # from the repository root
-cd 009-chat-history && ./mvnw spring-boot:run         # this module
-```
-
-```bash
-curl "http://localhost:8080/chat?message=Who scored for Morocco against Haiti?&conversationId=009"
-curl "http://localhost:8080/chat/009"
-```
+* `docker compose up -d postgres`
+* Start the application
+* Check and run [Requests.http](src/test/resources/Requests.http)
 
 The second call returns the full transcript for conversation `009` as JSON, straight from Postgres, with no model involved: run it again after enough
 further turns would have pushed this exchange out of the window-limited chat memory, and the transcript is still there.
 
 ---
 
-## 4. Exercise
+## 5. Exercise
 
 Try the [exercise](EXERCISE.md) before opening `010-embedding` and `010-vector-store-rag`.
