@@ -9,7 +9,7 @@ spring:
       genai:
         api-key: ${GOOGLE_AI_API_KEY}
         chat:
-          model: gemini-3.1-flash-lite
+          model: gemini-3.5-flash-lite
           google-search-retrieval: true
           include-server-side-tool-invocations: true
           thinking-budget: 8192

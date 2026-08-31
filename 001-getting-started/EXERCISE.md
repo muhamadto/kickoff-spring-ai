@@ -18,7 +18,7 @@ lite model is fast and cheap but shallower. A fixtures lookup doesn't need the s
 ### Task 1: Multiple named clients
 
 Create a `@Configuration` class that defines three named `ChatClient` beans, one each for
-`gemini-3.1-pro-preview`, `gemini-3.5-flash` and `gemini-3.1-flash-lite`, and inject them into the controller by name.
+`gemini-3.1-pro-preview`, `gemini-3.7-flash` and `gemini-3.5-flash-lite`, and inject them into the controller by name.
 
 Think about:
 
