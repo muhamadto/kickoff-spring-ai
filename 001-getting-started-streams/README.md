@@ -52,7 +52,7 @@ spring:
       genai:
         api-key: ${GOOGLE_AI_API_KEY}
         chat:
-          model: gemini-3.5-flash
+          model: gemini-3.7-flash
 ```
 
 ---

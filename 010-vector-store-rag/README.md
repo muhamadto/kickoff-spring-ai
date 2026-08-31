@@ -66,8 +66,8 @@ spring:
         api-key: ${GOOGLE_AI_API_KEY}
         chat:
           model: gemini-3.1-pro-preview
-          flash-model: gemini-3.5-flash
-          flash-lite-model: gemini-3.1-flash-lite
+          flash-model: gemini-3.7-flash
+          flash-lite-model: gemini-3.5-flash-lite
     chat:
       memory:
         repository:
