@@ -35,13 +35,13 @@ class EvaluationTestConfig {
 
 	@Bean
 	RelevancyEvaluator relevancyEvaluator(final ChatClient.Builder builder,
-			@Value("${spring.ai.google.genai.chat.flash-lite-model}") final String model) {
+			@Value("${spring.ai.google.genai.chat.flash-model}") final String model) {
 		return RelevancyEvaluator.builder().chatClientBuilder(evaluationChatClientBuilder(builder, model)).build();
 	}
 
 	@Bean
 	FactCheckingEvaluator factCheckingEvaluator(final ChatClient.Builder builder,
-			@Value("${spring.ai.google.genai.chat.flash-lite-model}") final String model) {
+			@Value("${spring.ai.google.genai.chat.flash-model}") final String model) {
 		return FactCheckingEvaluator.builder(evaluationChatClientBuilder(builder, model)).build();
 	}
 

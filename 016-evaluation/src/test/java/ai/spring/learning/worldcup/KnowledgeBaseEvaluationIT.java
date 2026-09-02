@@ -132,8 +132,7 @@ class KnowledgeBaseEvaluationIT {
 
 		final EvaluationResponse response = relevancyEvaluator.evaluate(evaluationRequest);
 
-		assertThat(response.isPass()).
-				as(response.getFeedback())
+		assertThat(response.isPass())
 				.isTrue();
 	}
 
@@ -150,15 +149,16 @@ class KnowledgeBaseEvaluationIT {
 				.as("Expected retrieval to find Estadio Akron's capacity")
 				.isNotEmpty();
 
-		final String answer = worldcup2026Service.chat(context.getFirst().getText(), "016-evaluation-test");
+		final String question = searchRequest.getQuery();
+		final String answer = worldcup2026Service.chat(question, "016-evaluation-test");
 
-		final EvaluationRequest evaluationRequest =
-				new EvaluationRequest("Estadio Akron has a seating capacity of 90,000.", List.of(), answer);
+		final List<Document> dataList = List.of(new Document("Estadio Akron has a seating capacity of 90,000 and hosted FIFA World Cup 2026 matches."));
+
+		final EvaluationRequest evaluationRequest = new EvaluationRequest(question, dataList, answer);
 
 		final EvaluationResponse response = factCheckingEvaluator.evaluate(evaluationRequest);
 
 		assertThat(response.isPass())
-				.as(response.getFeedback())
 				.isFalse();
 	}
 }
