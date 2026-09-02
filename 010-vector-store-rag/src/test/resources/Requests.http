@@ -29,7 +29,7 @@ GET http://localhost:8080/chat?
     conversationId=007
 
 ### Squads, grounded by the "Squads" section, notice how this fails because the checnks put "### Morocco squad" at the end of one chunk and the name of players without identifier at the begining of another chunk
-GET http://localhost:8080/chat?question=Who are some of the players in Morocco's squad?&
+GET http://localhost:8080/chat?question=Who are some of the players in Scotland's squad?&
     conversationId=007
 
 ###
