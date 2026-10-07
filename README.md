@@ -1,5 +1,12 @@
 # Spring AI Tutorial: World Cup 2026 Fan Assistant
 
+[![Quality gate status](https://sonarcloud.io/api/project_badges/measure?project=muhamadto_kickoff-spring-ai&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=muhamadto_kickoff-spring-ai)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=muhamadto_kickoff-spring-ai&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=muhamadto_kickoff-spring-ai)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=muhamadto_kickoff-spring-ai&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=muhamadto_kickoff-spring-ai)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=muhamadto_kickoff-spring-ai&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=muhamadto_kickoff-spring-ai)
+[![Maintainability issues](https://sonarcloud.io/api/project_badges/measure?project=muhamadto_kickoff-spring-ai&metric=software_quality_maintainability_issues)](https://sonarcloud.io/summary/new_code?id=muhamadto_kickoff-spring-ai)
+[![Reliability issues](https://sonarcloud.io/api/project_badges/measure?project=muhamadto_kickoff-spring-ai&metric=software_quality_reliability_issues)](https://sonarcloud.io/summary/new_code?id=muhamadto_kickoff-spring-ai)
+
 A step-by-step tutorial for building a Spring AI application against Google Gemini, themed as a FIFA World Cup 2026 fan assistant. Each module builds
 directly on the one before it.
 
